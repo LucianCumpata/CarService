@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarService", "CarService\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestCarService", "UnitTestCarService\UnitTestCarService.csproj", "{479686D2-F1D0-4107-BD26-A61A6ABEB8A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsCarService", "WinFormsCarService\WinFormsCarService.csproj", "{F66BAB15-1930-47B5-A7C0-164C9F55C2E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{479686D2-F1D0-4107-BD26-A61A6ABEB8A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479686D2-F1D0-4107-BD26-A61A6ABEB8A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479686D2-F1D0-4107-BD26-A61A6ABEB8A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66BAB15-1930-47B5-A7C0-164C9F55C2E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66BAB15-1930-47B5-A7C0-164C9F55C2E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66BAB15-1930-47B5-A7C0-164C9F55C2E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66BAB15-1930-47B5-A7C0-164C9F55C2E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

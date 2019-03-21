@@ -26,6 +26,7 @@ namespace WinFormsCarService
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
+            /*
             string fName = textBoxNume.Text.ToString();
             string lName = textBoxPrenume.Text.ToString();
             string addrs = textBoxAdresa.Text.ToString();
@@ -37,14 +38,15 @@ namespace WinFormsCarService
             
             try
             {
-                Clients.Add(fName, lName, addrs, loc, county, phoneNr, email);
+                CarServiceAPI.Clients.Add(fName, lName, addrs, loc, county, phoneNr, email);
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(),"Error");
             }
             
-           
+           */
         }
 
         private void textBoxNume_TextChanged(object sender, EventArgs e)
@@ -64,23 +66,28 @@ namespace WinFormsCarService
 
             //MessageBox.Show(Core.ShowClients()[0].Nume);
 
-            MessageBox.Show(Clients.ShowAll());
-            
-            
+            //MessageBox.Show(CarServiceAPI.Clients.ShowAll());
         }
 
+        
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            Clients.Delete(3);
+            //Clients.Delete(3);
         }
+        
 
         private void buttonAddMecanic_Click(object sender, EventArgs e)
         {
             string nume = textBoxNumeMecanic.Text.ToString();
             string prenume = textBoxPrenumeMecanic.Text.ToString();
+            Mecanic m = new Mecanic();
+            m.Nume = nume;
+            m.Prenume = prenume;
+
             try
             {
-                Mecanics.Add(nume,prenume);
+               CarServiceAPI.AddMecanic(m);
+               // Mecanics.Add(nume,prenume);
             }
             catch (Exception ex)
             {
@@ -96,24 +103,74 @@ namespace WinFormsCarService
 
         private void buttonMecanicUpdate_Click(object sender, EventArgs e)
         {
-            string nume = textBoxNumeMecanic.Text.ToString();
-            string prenume = textBoxPrenumeMecanic.Text.ToString();
-            int id = Int32.Parse(textBoxMecanicId.Text.ToString());
-            Mecanics.Update(id, nume, prenume);
+            if (textBoxMecanicId.TextLength > 0)
+            {
+                int id = Int32.Parse(textBoxMecanicId.Text.ToString());
+                //m.Id = id;
+
+                Mecanic m = CarServiceAPI.GetMecanicById(id);
+
+                if (textBoxNumeMecanic.TextLength > 0)
+                {
+                    string nume = textBoxNumeMecanic.Text.ToString();
+                    m.Nume = nume;
+                }
+                else
+                {
+                    m.Nume = m.Nume;
+                }
+
+                if (textBoxPrenumeMecanic.TextLength > 0)
+                {
+                    string prenume = textBoxPrenumeMecanic.Text.ToString();
+                    m.Prenume = prenume;
+                }
+                else
+                {
+                    m.Prenume = m.Prenume;
+                }
+                try
+                {
+                    CarServiceAPI.UpdateMecanic(m);
+                    // Mecanics.Add(nume,prenume);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+            }
         }
 
         private void buttonAddAuto_Click(object sender, EventArgs e)
         {
+            
             string nrAuto = textBoxNumarAuto.Text.ToString();
             string serieSasiu = textBoxSerieSasiu.Text.ToString();
             string codSasiu = textBoxCodSasiu.Text.ToString();
             string denumireSasiu = textBoxDenumireSasiu.Text.ToString();
             int id = Int32.Parse(textBoxIdClient.Text.ToString());
-            Automobile.Add(nrAuto, serieSasiu, codSasiu, denumireSasiu, id);
+            //Automobile.Add(nrAuto, serieSasiu, codSasiu, denumireSasiu, id);
+            
+            Auto a = new Auto();
+            Client c = CarServiceAPI.GetClientById(id);
+            Sasiu s = new Sasiu();
+            a.NumarAuto = nrAuto;
+            a.SerieSasiu = serieSasiu;
+            s.CodSasiu = codSasiu;
+            s.Denumire = denumireSasiu;
+            try
+            {
+                CarServiceAPI.AddAuto(a, c, s);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
         }
 
         private void buttonAutoUpdate_Click(object sender, EventArgs e)
         {
+            /*
             string nrAuto = textBoxNumarAuto.Text.ToString();
             string serieSasiu = textBoxSerieSasiu.Text.ToString();
             string codSasiu = textBoxCodSasiu.Text.ToString();
@@ -121,13 +178,16 @@ namespace WinFormsCarService
             int idClient = Int32.Parse(textBoxIdClient.Text.ToString());
             int id = Int32.Parse(textBoxAutoId.Text.ToString());
             Automobile.Update(id, nrAuto, serieSasiu, codSasiu, denumireSasiu, idClient);
-
+            */
         }
 
         private void buttonAutoDelete_Click(object sender, EventArgs e)
         {
-            Automobile.Delete(Int32.Parse(textBoxAutoId.Text.ToString()));
-            
+            //Automobile.Delete(Int32.Parse(textBoxAutoId.Text.ToString()));
+            int id = Int32.Parse(textBoxAutoId.Text.ToString());
+            Auto auto = CarServiceAPI.GetAutoById(id);
+
+            CarServiceAPI.DeleteAuto(auto);
         }
     }
 }

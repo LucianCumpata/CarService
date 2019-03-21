@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -54,22 +55,24 @@
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
     <Compile Include="Automobile.cs" />
-    <Compile Include="Clients.cs" />
     <Compile Include="Client.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clients.cs" />
     <Compile Include="Comanda.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
     <Compile Include="DetaliuComanda.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Images.cs" />
     <Compile Include="Imagine.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
     <Compile Include="Material.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Materials.cs" />
     <Compile Include="Mecanic.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
@@ -92,6 +95,9 @@
     <Compile Include="Operatie.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
+    <Compile Include="Operations.cs" />
+    <Compile Include="OrderDetails.cs" />
+    <Compile Include="Orders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sasiu.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>

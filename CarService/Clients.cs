@@ -162,6 +162,29 @@ namespace CarService
 
             }
         }
+
+        public static void AddClient(Client client)
+        {
+            using (ModelCarServiceContainer context = new ModelCarServiceContainer())
+            {
+                try
+                {
+                    context.Database.Connection.Open();
+                    context.ClientSet.Add(client);
+                    context.SaveChanges();
+                }
+                catch(DbEntityValidationException ex)
+                {
+                    foreach (DbEntityValidationResult entityErr in ex.EntityValidationErrors)
+                    {
+                        foreach (DbValidationError error in entityErr.ValidationErrors)
+                        {
+                            throw;
+                        }
+                    }
+                }
+            }
+        }
         
     }
 }

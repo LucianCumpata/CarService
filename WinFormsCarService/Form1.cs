@@ -26,6 +26,27 @@ namespace WinFormsCarService
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
+            Client client = new Client();
+            client.Nume = textBoxNume.Text.ToString();
+            client.Prenume = textBoxPrenume.Text.ToString();
+            client.Adresa = textBoxAdresa.Text.ToString();
+            client.Localitate = textBoxLocalitate.Text.ToString();
+            client.Judet = textBoxJudet.Text.ToString();
+            client.Telefon = textBoxTelefon.Text.ToString();
+            client.Email = textBoxEmail.Text.ToString();
+
+            try
+            {
+                Clients.AddClient(client);
+                MessageBox.Show("Client " + client.Nume + " " + client.Prenume + " a fost adaugat cu succes!");
+                textBoxNume.Clear();
+                textBoxPrenume.Clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error");
+            }
+            /*
             string fName = textBoxNume.Text.ToString();
             string lName = textBoxPrenume.Text.ToString();
             string addrs = textBoxAdresa.Text.ToString();
@@ -43,8 +64,8 @@ namespace WinFormsCarService
             {
                 MessageBox.Show(ex.ToString(),"Error");
             }
-            
-           
+            */
+
         }
 
         private void textBoxNume_TextChanged(object sender, EventArgs e)
@@ -81,6 +102,7 @@ namespace WinFormsCarService
             try
             {
                 Mecanics.Add(nume,prenume);
+               
             }
             catch (Exception ex)
             {

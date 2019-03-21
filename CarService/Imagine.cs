@@ -15,11 +15,11 @@ namespace CarService
     public partial class Imagine
     {
         public int Id { get; set; }
-        public int DetaliuComandaId { get; set; }
         public string Titlu { get; set; }
         public string Descriere { get; set; }
         public System.DateTime Data { get; set; }
         public byte[] Photo { get; set; }
+        public int DetaliuComandaId { get; set; }
     
         public virtual DetaliuComanda DetaliuComanda { get; set; }
     }

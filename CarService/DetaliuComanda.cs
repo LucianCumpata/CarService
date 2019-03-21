@@ -26,11 +26,11 @@ namespace CarService
         public int OperatieId { get; set; }
         public int MecanicId { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Imagine> Imagine { get; set; }
         public virtual Comanda Comanda { get; set; }
         public virtual Material Material { get; set; }
         public virtual Operatie Operatie { get; set; }
         public virtual Mecanic Mecanic { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Imagine> Imagine { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/14/2019 15:31:06
+-- Date Created: 03/21/2019 02:19:36
 -- Generated from EDMX file: C:\Users\proal_000\Documents\GitHub\CarService\CarService\ModelCarService.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,65 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ImagineDetaliuComanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ImagineSet] DROP CONSTRAINT [FK_ImagineDetaliuComanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AutoSasiu]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AutoSet] DROP CONSTRAINT [FK_AutoSasiu];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AutoClient]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[AutoSet] DROP CONSTRAINT [FK_AutoClient];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaAuto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ComandaSet] DROP CONSTRAINT [FK_ComandaAuto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaClient]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ComandaSet] DROP CONSTRAINT [FK_ComandaClient];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ComandaDetaliuComanda]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaSet] DROP CONSTRAINT [FK_ComandaDetaliuComanda];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMaterial]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaSet] DROP CONSTRAINT [FK_DetaliuComandaMaterial];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaOperatie]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaSet] DROP CONSTRAINT [FK_DetaliuComandaOperatie];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMecanic]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[DetaliuComandaSet] DROP CONSTRAINT [FK_DetaliuComandaMecanic];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClientSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClientSet];
+GO
+IF OBJECT_ID(N'[dbo].[AutoSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AutoSet];
+GO
+IF OBJECT_ID(N'[dbo].[SasiuSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[SasiuSet];
+GO
+IF OBJECT_ID(N'[dbo].[MecanicSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MecanicSet];
+GO
+IF OBJECT_ID(N'[dbo].[MaterialSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MaterialSet];
+GO
+IF OBJECT_ID(N'[dbo].[ImagineSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ImagineSet];
+GO
+IF OBJECT_ID(N'[dbo].[OperatieSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OperatieSet];
+GO
+IF OBJECT_ID(N'[dbo].[ComandaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ComandaSet];
+GO
+IF OBJECT_ID(N'[dbo].[DetaliuComandaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[DetaliuComandaSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -70,8 +124,8 @@ GO
 CREATE TABLE [dbo].[MaterialSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Denumire] nvarchar(50)  NOT NULL,
-    [Cantitate] decimal(18,0)  NOT NULL,
-    [Pret] decimal(18,0)  NOT NULL,
+    [Cantitate] decimal(10,2)  NOT NULL,
+    [Pret] decimal(10,2)  NOT NULL,
     [DataAprovizionare] datetime  NOT NULL
 );
 GO
@@ -79,11 +133,11 @@ GO
 -- Creating table 'ImagineSet'
 CREATE TABLE [dbo].[ImagineSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [DetaliuComandaId] int  NOT NULL,
     [Titlu] nvarchar(15)  NOT NULL,
     [Descriere] nvarchar(256)  NOT NULL,
     [Data] datetime  NOT NULL,
-    [Photo] varbinary(max)  NOT NULL
+    [Photo] varbinary(max)  NOT NULL,
+    [DetaliuComandaId] int  NOT NULL
 );
 GO
 
@@ -91,7 +145,7 @@ GO
 CREATE TABLE [dbo].[OperatieSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Denumire] nvarchar(256)  NOT NULL,
-    [TimpExecutie] decimal(18,0)  NOT NULL
+    [TimpExecutie] decimal(6,2)  NOT NULL
 );
 GO
 
@@ -103,10 +157,10 @@ CREATE TABLE [dbo].[ComandaSet] (
     [StareComanda] nvarchar(25)  NOT NULL,
     [DataSystem] datetime  NOT NULL,
     [DataProgramare] datetime  NOT NULL,
-    [DataFinalizare] nvarchar(max)  NOT NULL,
+    [DataFinalizare] datetime  NOT NULL,
     [KmBord] int  NOT NULL,
     [Descriere] nvarchar(1024)  NOT NULL,
-    [ValoarePiese] decimal(18,0)  NOT NULL
+    [ValoarePiese] decimal(10,2)  NOT NULL
 );
 GO
 
@@ -181,21 +235,6 @@ GO
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
-
--- Creating foreign key on [DetaliuComandaId] in table 'ImagineSet'
-ALTER TABLE [dbo].[ImagineSet]
-ADD CONSTRAINT [FK_ImagineDetaliuComanda]
-    FOREIGN KEY ([DetaliuComandaId])
-    REFERENCES [dbo].[DetaliuComandaSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_ImagineDetaliuComanda'
-CREATE INDEX [IX_FK_ImagineDetaliuComanda]
-ON [dbo].[ImagineSet]
-    ([DetaliuComandaId]);
-GO
 
 -- Creating foreign key on [SasiuId] in table 'AutoSet'
 ALTER TABLE [dbo].[AutoSet]
@@ -315,6 +354,21 @@ GO
 CREATE INDEX [IX_FK_DetaliuComandaMecanic]
 ON [dbo].[DetaliuComandaSet]
     ([MecanicId]);
+GO
+
+-- Creating foreign key on [DetaliuComandaId] in table 'ImagineSet'
+ALTER TABLE [dbo].[ImagineSet]
+ADD CONSTRAINT [FK_DetaliuComandaImagine]
+    FOREIGN KEY ([DetaliuComandaId])
+    REFERENCES [dbo].[DetaliuComandaSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_DetaliuComandaImagine'
+CREATE INDEX [IX_FK_DetaliuComandaImagine]
+ON [dbo].[ImagineSet]
+    ([DetaliuComandaId]);
 GO
 
 -- --------------------------------------------------

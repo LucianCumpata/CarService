@@ -26,7 +26,7 @@ namespace CarService
         public string StareComanda { get; set; }
         public System.DateTime DataSystem { get; set; }
         public System.DateTime DataProgramare { get; set; }
-        public string DataFinalizare { get; set; }
+        public System.DateTime DataFinalizare { get; set; }
         public int KmBord { get; set; }
         public string Descriere { get; set; }
         public decimal ValoarePiese { get; set; }

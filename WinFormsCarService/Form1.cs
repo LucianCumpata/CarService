@@ -26,7 +26,7 @@ namespace WinFormsCarService
 
         private void buttonAddClient_Click(object sender, EventArgs e)
         {
-            /*
+            Client client = new Client();
             string fName = textBoxNume.Text.ToString();
             string lName = textBoxPrenume.Text.ToString();
             string addrs = textBoxAdresa.Text.ToString();
@@ -35,18 +35,24 @@ namespace WinFormsCarService
             string phoneNr = textBoxTelefon.Text.ToString();
             string email = textBoxEmail.Text.ToString();
 
+            client.Nume = fName;
+            client.Prenume = lName;
+            client.Adresa = addrs;
+            client.Localitate = loc;
+            client.Judet = county;
+            client.Telefon = phoneNr;
+            client.Email = email;
             
             try
             {
-                CarServiceAPI.Clients.Add(fName, lName, addrs, loc, county, phoneNr, email);
+                CarServiceAPI.AddClient(client);
                 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(),"Error");
             }
-            
-           */
+           
         }
 
         private void textBoxNume_TextChanged(object sender, EventArgs e)

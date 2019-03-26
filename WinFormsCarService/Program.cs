@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace WinFormsCarService
 {
-    static class Program
+    public static class Program
     {
         /// <summary>
         /// The main entry point for the application.
@@ -18,5 +18,15 @@ namespace WinFormsCarService
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new CarServiceForm());
         }
+
+        /*
+        [STAThread]
+        public static void AddNewClientForm()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new NewClientForm());
+        }
+        */
     }
 }

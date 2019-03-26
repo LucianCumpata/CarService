@@ -9,6 +9,22 @@ namespace CarService
 {
     public class CarServiceAPI
     {
+        private static ModelCarServiceContainer _dbContext;
+
+        public static void SetContext(ModelCarServiceContainer context)
+        {
+            _dbContext = context;
+        }
+        public static void DisposeModelCarServiceContext()
+        {
+            _dbContext.Dispose();
+        }
+
+        public static ModelCarServiceContainer GetContext()
+        {
+            return _dbContext;
+        }
+
         public static void AddMecanic(Mecanic m)
         {
             using (ModelCarServiceContainer dbContext = new ModelCarServiceContainer())
@@ -54,6 +70,23 @@ namespace CarService
                 client.Add(c);
             }
         }
+
+        public static IEnumerable<Client> ListAllClients()
+        {
+            SetContext(new ModelCarServiceContainer());
+            Repository<Client> client = new Repository<Client>(GetContext());
+            return client.List();
+        }
+
+        /*
+        public static IEnumerable<Client> ListClientsByName(string n)
+        {
+            SetContext(new ModelCarServiceContainer());
+            Repository<Client> client = new Repository<Client>(GetContext());
+            var clientsByName = _dbContext.ClientSet.SelectMany(c => c.Nume);
+            return clientsByName;
+        }
+        */
 
         public static void DeleteClient(Client c)
         {

@@ -26,6 +26,12 @@ namespace CarService
             return _dbContext.Set<T>().AsEnumerable();
         }
 
+        /*
+        public virtual IEnumerable<T> List(System.Data.Entity.Infrastructure.DbSqlQuery<Auto> dbSqlQuery)
+        {
+            return _dbContext.Set<T>().AsEnumerable();
+        }
+        */
         public virtual IEnumerable<T> List(System.Linq.Expressions.Expression<Func<T, bool>> predicate)
         {
             return _dbContext.Set<T>()

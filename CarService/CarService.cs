@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -106,6 +107,19 @@ namespace CarService
             }
         }
 
+        public static IEnumerable<Client> ListClientsByName(string name)
+        {
+            Expression<Func<Client,bool>> FilterByClientName(string n)
+            {
+                return x => x.Nume == n || x.Prenume == n;
+            }
+
+            SetContext(new ModelCarServiceContainer());
+            Repository<Client> client = new Repository<Client>(GetContext());
+            var result = _dbContext.ClientSet.Where(FilterByClientName(name));
+            return result;
+        }
+
         public static void UpdateClient(Client c)
         {
             using (ModelCarServiceContainer dbContext = new ModelCarServiceContainer())
@@ -202,6 +216,23 @@ namespace CarService
                 auto.SasiuId = sasiu.Id;
                 autoRepository.Add(auto);
             }
+        }
+
+        
+        public static IEnumerable<Auto> ListAutosByClient(Client client)
+        {
+            Expression<Func<Auto, bool>> FilterByClientId(int id)
+            {
+                return x => x.ClientId == id;
+            }
+
+            SetContext(new ModelCarServiceContainer());
+            Repository<Auto> auto = new Repository<Auto>(GetContext());
+
+            var result = _dbContext.AutoSet.Where(FilterByClientId(client.Id));
+            //return auto.List(_dbContext.AutoSet.SqlQuery("SELECT * FROM AutoSet WHERE ClientId = @p0", client.Id));
+            //return auto.List(result);
+            return result;
         }
 
         public static void DeleteAuto(Auto auto)

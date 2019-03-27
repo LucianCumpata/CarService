@@ -30,15 +30,16 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newMecanicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newClientToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.showAllClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewClients = new System.Windows.Forms.ListView();
             this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -46,13 +47,21 @@
             this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBoxSearchClient = new System.Windows.Forms.TextBox();
             this.buttonSearchClient = new System.Windows.Forms.Button();
-            this.newMecanicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listViewCars = new System.Windows.Forms.ListView();
             this.columnHeaderCarId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCarNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonAddCar = new System.Windows.Forms.Button();
             this.buttonAutoDelete = new System.Windows.Forms.Button();
             this.buttonAutoUpdate = new System.Windows.Forms.Button();
+            this.listViewOrders = new System.Windows.Forms.ListView();
+            this.columnHeaderOrderID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDateSystem = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDateStart = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDateFinish = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderKm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonNewOrder = new System.Windows.Forms.Button();
+            this.buttonOrderDetails = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,6 +87,36 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newClientToolStripMenuItem,
+            this.newMecanicToolStripMenuItem});
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.addToolStripMenuItem.Text = "Add";
+            // 
+            // newClientToolStripMenuItem
+            // 
+            this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
+            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newClientToolStripMenuItem.Text = "New client";
+            this.newClientToolStripMenuItem.Click += new System.EventHandler(this.newClientToolStripMenuItem_Click);
+            // 
+            // newMecanicToolStripMenuItem
+            // 
+            this.newMecanicToolStripMenuItem.Name = "newMecanicToolStripMenuItem";
+            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newMecanicToolStripMenuItem.Text = "New mecanic";
+            this.newMecanicToolStripMenuItem.Click += new System.EventHandler(this.newMecanicToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
@@ -92,6 +131,13 @@
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
             // 
+            // showAllClientsToolStripMenuItem
+            // 
+            this.showAllClientsToolStripMenuItem.Name = "showAllClientsToolStripMenuItem";
+            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.showAllClientsToolStripMenuItem.Text = "Show all clients";
+            this.showAllClientsToolStripMenuItem.Click += new System.EventHandler(this.showAllClientsToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -104,44 +150,14 @@
             // viewHelpToolStripMenuItem
             // 
             this.viewHelpToolStripMenuItem.Name = "viewHelpToolStripMenuItem";
-            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewHelpToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.viewHelpToolStripMenuItem.Text = "View Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // addToolStripMenuItem
-            // 
-            this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newClientToolStripMenuItem,
-            this.newMecanicToolStripMenuItem});
-            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addToolStripMenuItem.Text = "Add";
-            // 
-            // newClientToolStripMenuItem
-            // 
-            this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
-            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newClientToolStripMenuItem.Text = "New client";
-            this.newClientToolStripMenuItem.Click += new System.EventHandler(this.newClientToolStripMenuItem_Click);
-            // 
-            // showAllClientsToolStripMenuItem
-            // 
-            this.showAllClientsToolStripMenuItem.Name = "showAllClientsToolStripMenuItem";
-            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showAllClientsToolStripMenuItem.Text = "Show all clients";
-            this.showAllClientsToolStripMenuItem.Click += new System.EventHandler(this.showAllClientsToolStripMenuItem_Click);
             // 
             // listViewClients
             // 
@@ -152,6 +168,7 @@
             this.columnHeaderPhone});
             this.listViewClients.FullRowSelect = true;
             this.listViewClients.Location = new System.Drawing.Point(26, 44);
+            this.listViewClients.MultiSelect = false;
             this.listViewClients.Name = "listViewClients";
             this.listViewClients.Size = new System.Drawing.Size(332, 183);
             this.listViewClients.TabIndex = 9;
@@ -179,12 +196,13 @@
             // 
             this.textBoxSearchClient.Location = new System.Drawing.Point(26, 239);
             this.textBoxSearchClient.Name = "textBoxSearchClient";
-            this.textBoxSearchClient.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSearchClient.Size = new System.Drawing.Size(115, 20);
             this.textBoxSearchClient.TabIndex = 10;
+            this.textBoxSearchClient.TextChanged += new System.EventHandler(this.textBoxSearchClient_TextChanged);
             // 
             // buttonSearchClient
             // 
-            this.buttonSearchClient.Location = new System.Drawing.Point(162, 238);
+            this.buttonSearchClient.Location = new System.Drawing.Point(186, 239);
             this.buttonSearchClient.Name = "buttonSearchClient";
             this.buttonSearchClient.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchClient.TabIndex = 11;
@@ -192,21 +210,16 @@
             this.buttonSearchClient.UseVisualStyleBackColor = true;
             this.buttonSearchClient.Click += new System.EventHandler(this.buttonSearchClient_Click);
             // 
-            // newMecanicToolStripMenuItem
-            // 
-            this.newMecanicToolStripMenuItem.Name = "newMecanicToolStripMenuItem";
-            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.newMecanicToolStripMenuItem.Text = "New mecanic";
-            this.newMecanicToolStripMenuItem.Click += new System.EventHandler(this.newMecanicToolStripMenuItem_Click);
-            // 
             // listViewCars
             // 
             this.listViewCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderCarId,
             this.columnHeaderCarNr});
-            this.listViewCars.Location = new System.Drawing.Point(394, 44);
+            this.listViewCars.FullRowSelect = true;
+            this.listViewCars.Location = new System.Drawing.Point(26, 325);
+            this.listViewCars.MultiSelect = false;
             this.listViewCars.Name = "listViewCars";
-            this.listViewCars.Size = new System.Drawing.Size(235, 183);
+            this.listViewCars.Size = new System.Drawing.Size(332, 183);
             this.listViewCars.TabIndex = 12;
             this.listViewCars.UseCompatibleStateImageBehavior = false;
             this.listViewCars.View = System.Windows.Forms.View.Details;
@@ -224,7 +237,7 @@
             // 
             // buttonAddCar
             // 
-            this.buttonAddCar.Location = new System.Drawing.Point(394, 233);
+            this.buttonAddCar.Location = new System.Drawing.Point(26, 526);
             this.buttonAddCar.Name = "buttonAddCar";
             this.buttonAddCar.Size = new System.Drawing.Size(73, 23);
             this.buttonAddCar.TabIndex = 13;
@@ -234,27 +247,93 @@
             // 
             // buttonAutoDelete
             // 
-            this.buttonAutoDelete.Location = new System.Drawing.Point(554, 233);
+            this.buttonAutoDelete.Location = new System.Drawing.Point(186, 526);
             this.buttonAutoDelete.Name = "buttonAutoDelete";
             this.buttonAutoDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonAutoDelete.TabIndex = 14;
             this.buttonAutoDelete.Text = "Sterge";
             this.buttonAutoDelete.UseVisualStyleBackColor = true;
+            this.buttonAutoDelete.Click += new System.EventHandler(this.buttonAutoDelete_Click);
             // 
             // buttonAutoUpdate
             // 
-            this.buttonAutoUpdate.Location = new System.Drawing.Point(473, 233);
+            this.buttonAutoUpdate.Location = new System.Drawing.Point(105, 526);
             this.buttonAutoUpdate.Name = "buttonAutoUpdate";
             this.buttonAutoUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonAutoUpdate.TabIndex = 15;
             this.buttonAutoUpdate.Text = "Modifica";
             this.buttonAutoUpdate.UseVisualStyleBackColor = true;
             // 
+            // listViewOrders
+            // 
+            this.listViewOrders.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderOrderID,
+            this.columnHeaderStatus,
+            this.columnHeaderDateSystem,
+            this.columnHeaderDateStart,
+            this.columnHeaderDateFinish,
+            this.columnHeaderKm});
+            this.listViewOrders.Location = new System.Drawing.Point(410, 44);
+            this.listViewOrders.MultiSelect = false;
+            this.listViewOrders.Name = "listViewOrders";
+            this.listViewOrders.Size = new System.Drawing.Size(362, 183);
+            this.listViewOrders.TabIndex = 16;
+            this.listViewOrders.UseCompatibleStateImageBehavior = false;
+            this.listViewOrders.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeaderOrderID
+            // 
+            this.columnHeaderOrderID.Text = "Id";
+            this.columnHeaderOrderID.Width = 30;
+            // 
+            // columnHeaderStatus
+            // 
+            this.columnHeaderStatus.Text = "Stare comanda";
+            this.columnHeaderStatus.Width = 85;
+            // 
+            // columnHeaderDateSystem
+            // 
+            this.columnHeaderDateSystem.Text = "Data sistem";
+            // 
+            // columnHeaderDateStart
+            // 
+            this.columnHeaderDateStart.Text = "Data incepere";
+            // 
+            // columnHeaderDateFinish
+            // 
+            this.columnHeaderDateFinish.Text = "Data terminare";
+            // 
+            // columnHeaderKm
+            // 
+            this.columnHeaderKm.Text = "Km bord";
+            // 
+            // buttonNewOrder
+            // 
+            this.buttonNewOrder.Location = new System.Drawing.Point(268, 526);
+            this.buttonNewOrder.Name = "buttonNewOrder";
+            this.buttonNewOrder.Size = new System.Drawing.Size(90, 23);
+            this.buttonNewOrder.TabIndex = 17;
+            this.buttonNewOrder.Text = "Comanda noua";
+            this.buttonNewOrder.UseVisualStyleBackColor = true;
+            this.buttonNewOrder.Click += new System.EventHandler(this.buttonNewOrder_Click);
+            // 
+            // buttonOrderDetails
+            // 
+            this.buttonOrderDetails.Location = new System.Drawing.Point(410, 238);
+            this.buttonOrderDetails.Name = "buttonOrderDetails";
+            this.buttonOrderDetails.Size = new System.Drawing.Size(75, 23);
+            this.buttonOrderDetails.TabIndex = 18;
+            this.buttonOrderDetails.Text = "Detalii";
+            this.buttonOrderDetails.UseVisualStyleBackColor = true;
+            // 
             // CarServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.buttonOrderDetails);
+            this.Controls.Add(this.buttonNewOrder);
+            this.Controls.Add(this.listViewOrders);
             this.Controls.Add(this.buttonAutoUpdate);
             this.Controls.Add(this.buttonAutoDelete);
             this.Controls.Add(this.buttonAddCar);
@@ -300,6 +379,15 @@
         private System.Windows.Forms.Button buttonAddCar;
         private System.Windows.Forms.Button buttonAutoDelete;
         private System.Windows.Forms.Button buttonAutoUpdate;
+        private System.Windows.Forms.ListView listViewOrders;
+        private System.Windows.Forms.ColumnHeader columnHeaderOrderID;
+        private System.Windows.Forms.ColumnHeader columnHeaderStatus;
+        private System.Windows.Forms.ColumnHeader columnHeaderDateSystem;
+        private System.Windows.Forms.ColumnHeader columnHeaderDateStart;
+        private System.Windows.Forms.ColumnHeader columnHeaderDateFinish;
+        private System.Windows.Forms.ColumnHeader columnHeaderKm;
+        private System.Windows.Forms.Button buttonNewOrder;
+        private System.Windows.Forms.Button buttonOrderDetails;
     }
 }
 

@@ -29,16 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBoxAutomobile = new System.Windows.Forms.GroupBox();
-            this.buttonAutoDelete = new System.Windows.Forms.Button();
-            this.buttonAutoUpdate = new System.Windows.Forms.Button();
-            this.textBoxAutoId = new System.Windows.Forms.TextBox();
-            this.labelAutoId = new System.Windows.Forms.Label();
             this.buttonAddAuto = new System.Windows.Forms.Button();
-            this.textBoxIdClient = new System.Windows.Forms.TextBox();
             this.textBoxDenumireSasiu = new System.Windows.Forms.TextBox();
             this.textBoxCodSasiu = new System.Windows.Forms.TextBox();
             this.textBoxSerieSasiu = new System.Windows.Forms.TextBox();
-            this.labelAutoClientId = new System.Windows.Forms.Label();
             this.textBoxNumarAuto = new System.Windows.Forms.TextBox();
             this.labelSasiuDenumire = new System.Windows.Forms.Label();
             this.labelSasiuCod = new System.Windows.Forms.Label();
@@ -49,16 +43,10 @@
             // 
             // groupBoxAutomobile
             // 
-            this.groupBoxAutomobile.Controls.Add(this.buttonAutoDelete);
-            this.groupBoxAutomobile.Controls.Add(this.buttonAutoUpdate);
-            this.groupBoxAutomobile.Controls.Add(this.textBoxAutoId);
-            this.groupBoxAutomobile.Controls.Add(this.labelAutoId);
             this.groupBoxAutomobile.Controls.Add(this.buttonAddAuto);
-            this.groupBoxAutomobile.Controls.Add(this.textBoxIdClient);
             this.groupBoxAutomobile.Controls.Add(this.textBoxDenumireSasiu);
             this.groupBoxAutomobile.Controls.Add(this.textBoxCodSasiu);
             this.groupBoxAutomobile.Controls.Add(this.textBoxSerieSasiu);
-            this.groupBoxAutomobile.Controls.Add(this.labelAutoClientId);
             this.groupBoxAutomobile.Controls.Add(this.textBoxNumarAuto);
             this.groupBoxAutomobile.Controls.Add(this.labelSasiuDenumire);
             this.groupBoxAutomobile.Controls.Add(this.labelSasiuCod);
@@ -71,41 +59,6 @@
             this.groupBoxAutomobile.TabStop = false;
             this.groupBoxAutomobile.Text = "Auto";
             // 
-            // buttonAutoDelete
-            // 
-            this.buttonAutoDelete.Location = new System.Drawing.Point(207, 195);
-            this.buttonAutoDelete.Name = "buttonAutoDelete";
-            this.buttonAutoDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonAutoDelete.TabIndex = 14;
-            this.buttonAutoDelete.Text = "Delete";
-            this.buttonAutoDelete.UseVisualStyleBackColor = true;
-            // 
-            // buttonAutoUpdate
-            // 
-            this.buttonAutoUpdate.Location = new System.Drawing.Point(125, 195);
-            this.buttonAutoUpdate.Name = "buttonAutoUpdate";
-            this.buttonAutoUpdate.Size = new System.Drawing.Size(75, 23);
-            this.buttonAutoUpdate.TabIndex = 13;
-            this.buttonAutoUpdate.Text = "Update";
-            this.buttonAutoUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBoxAutoId
-            // 
-            this.textBoxAutoId.Location = new System.Drawing.Point(100, 167);
-            this.textBoxAutoId.Name = "textBoxAutoId";
-            this.textBoxAutoId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxAutoId.TabIndex = 12;
-            this.textBoxAutoId.TextChanged += new System.EventHandler(this.textBoxAutoId_TextChanged);
-            // 
-            // labelAutoId
-            // 
-            this.labelAutoId.AutoSize = true;
-            this.labelAutoId.Location = new System.Drawing.Point(15, 165);
-            this.labelAutoId.Name = "labelAutoId";
-            this.labelAutoId.Size = new System.Drawing.Size(16, 13);
-            this.labelAutoId.TabIndex = 11;
-            this.labelAutoId.Text = "Id";
-            // 
             // buttonAddAuto
             // 
             this.buttonAddAuto.Location = new System.Drawing.Point(23, 196);
@@ -115,14 +68,6 @@
             this.buttonAddAuto.Text = "Add auto";
             this.buttonAddAuto.UseVisualStyleBackColor = true;
             this.buttonAddAuto.Click += new System.EventHandler(this.buttonAddAuto_Click);
-            // 
-            // textBoxIdClient
-            // 
-            this.textBoxIdClient.Location = new System.Drawing.Point(100, 141);
-            this.textBoxIdClient.Name = "textBoxIdClient";
-            this.textBoxIdClient.Size = new System.Drawing.Size(100, 20);
-            this.textBoxIdClient.TabIndex = 9;
-            this.textBoxIdClient.TextChanged += new System.EventHandler(this.textBoxIdClient_TextChanged);
             // 
             // textBoxDenumireSasiu
             // 
@@ -147,15 +92,6 @@
             this.textBoxSerieSasiu.Size = new System.Drawing.Size(100, 20);
             this.textBoxSerieSasiu.TabIndex = 6;
             this.textBoxSerieSasiu.TextChanged += new System.EventHandler(this.textBoxSerieSasiu_TextChanged);
-            // 
-            // labelAutoClientId
-            // 
-            this.labelAutoClientId.AutoSize = true;
-            this.labelAutoClientId.Location = new System.Drawing.Point(10, 141);
-            this.labelAutoClientId.Name = "labelAutoClientId";
-            this.labelAutoClientId.Size = new System.Drawing.Size(45, 13);
-            this.labelAutoClientId.TabIndex = 5;
-            this.labelAutoClientId.Text = "Id Client";
             // 
             // textBoxNumarAuto
             // 
@@ -218,16 +154,10 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxAutomobile;
-        private System.Windows.Forms.Button buttonAutoDelete;
-        private System.Windows.Forms.Button buttonAutoUpdate;
-        private System.Windows.Forms.TextBox textBoxAutoId;
-        private System.Windows.Forms.Label labelAutoId;
         private System.Windows.Forms.Button buttonAddAuto;
-        private System.Windows.Forms.TextBox textBoxIdClient;
         private System.Windows.Forms.TextBox textBoxDenumireSasiu;
         private System.Windows.Forms.TextBox textBoxCodSasiu;
         private System.Windows.Forms.TextBox textBoxSerieSasiu;
-        private System.Windows.Forms.Label labelAutoClientId;
         private System.Windows.Forms.TextBox textBoxNumarAuto;
         private System.Windows.Forms.Label labelSasiuDenumire;
         private System.Windows.Forms.Label labelSasiuCod;

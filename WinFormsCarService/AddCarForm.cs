@@ -13,10 +13,14 @@ namespace WinFormsCarService
 {
     public partial class AddCarForm : Form
     {
-        public AddCarForm()
+        private string _selectedClientId;
+
+        public AddCarForm(string selectedClientId)
         {
             InitializeComponent();
+            _selectedClientId = selectedClientId;
         }
+
 
         private void textBoxNumarAuto_TextChanged(object sender, EventArgs e)
         {
@@ -38,15 +42,7 @@ namespace WinFormsCarService
 
         }
 
-        private void textBoxIdClient_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxAutoId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+   
 
         private void buttonAddAuto_Click(object sender, EventArgs e)
         {
@@ -54,11 +50,11 @@ namespace WinFormsCarService
             string serieSasiu = textBoxSerieSasiu.Text.ToString();
             string codSasiu = textBoxCodSasiu.Text.ToString();
             string denumireSasiu = textBoxDenumireSasiu.Text.ToString();
-            int id = Int32.Parse(textBoxIdClient.Text.ToString());
-            //Automobile.Add(nrAuto, serieSasiu, codSasiu, denumireSasiu, id);
+            string idClient = (_selectedClientId);
+
 
             Auto a = new Auto();
-            Client c = CarServiceAPI.GetClientById(id);
+            Client c = CarServiceAPI.GetClientById(int.Parse(idClient));
             Sasiu s = new Sasiu();
             a.NumarAuto = nrAuto;
             a.SerieSasiu = serieSasiu;
@@ -67,6 +63,11 @@ namespace WinFormsCarService
             try
             {
                 CarServiceAPI.AddAuto(a, c, s);
+                MessageBox.Show("Masina a fost adaugata cu succes");
+                textBoxNumarAuto.Clear();
+                textBoxSerieSasiu.Clear();
+                textBoxCodSasiu.Clear();
+                textBoxDenumireSasiu.Clear();
             }
             catch (Exception ex)
             {

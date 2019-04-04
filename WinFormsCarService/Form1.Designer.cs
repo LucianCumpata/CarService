@@ -69,6 +69,13 @@
             this.showAllMecanicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonClientDelete = new System.Windows.Forms.Button();
             this.buttonOrderUpdate = new System.Windows.Forms.Button();
+            this.columnHeaderSerieSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderCodSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDenumireAuto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientAdress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientLocalitate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientJudet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.groupBoxCars.SuspendLayout();
             this.groupBoxClients.SuspendLayout();
@@ -176,12 +183,16 @@
             this.columnHeaderId,
             this.columnHeaderFName,
             this.columnHeaderLName,
-            this.columnHeaderPhone});
+            this.columnHeaderClientAdress,
+            this.columnHeaderClientLocalitate,
+            this.columnHeaderClientJudet,
+            this.columnHeaderPhone,
+            this.columnHeaderClientEmail});
             this.listViewClients.FullRowSelect = true;
             this.listViewClients.Location = new System.Drawing.Point(8, 22);
             this.listViewClients.MultiSelect = false;
             this.listViewClients.Name = "listViewClients";
-            this.listViewClients.Size = new System.Drawing.Size(332, 183);
+            this.listViewClients.Size = new System.Drawing.Size(358, 183);
             this.listViewClients.TabIndex = 9;
             this.listViewClients.UseCompatibleStateImageBehavior = false;
             this.listViewClients.View = System.Windows.Forms.View.Details;
@@ -201,6 +212,7 @@
             // 
             // columnHeaderPhone
             // 
+            this.columnHeaderPhone.DisplayIndex = 3;
             this.columnHeaderPhone.Text = "Telefon";
             // 
             // textBoxSearchClient
@@ -225,7 +237,10 @@
             // 
             this.listViewCars.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderCarId,
-            this.columnHeaderCarNr});
+            this.columnHeaderCarNr,
+            this.columnHeaderSerieSasiu,
+            this.columnHeaderCodSasiu,
+            this.columnHeaderDenumireAuto});
             this.listViewCars.FullRowSelect = true;
             this.listViewCars.Location = new System.Drawing.Point(6, 19);
             this.listViewCars.MultiSelect = false;
@@ -383,7 +398,6 @@
             // 
             // richTextBoxOrderDescription
             // 
-            this.richTextBoxOrderDescription.Enabled = false;
             this.richTextBoxOrderDescription.Location = new System.Drawing.Point(444, 19);
             this.richTextBoxOrderDescription.MaxLength = 1024;
             this.richTextBoxOrderDescription.Name = "richTextBoxOrderDescription";
@@ -419,6 +433,40 @@
             this.buttonOrderUpdate.Text = "Modifica comanda";
             this.buttonOrderUpdate.UseVisualStyleBackColor = true;
             this.buttonOrderUpdate.Click += new System.EventHandler(this.buttonOrderUpdate_Click);
+            // 
+            // columnHeaderSerieSasiu
+            // 
+            this.columnHeaderSerieSasiu.Text = "SerieSasiu";
+            this.columnHeaderSerieSasiu.Width = 75;
+            // 
+            // columnHeaderCodSasiu
+            // 
+            this.columnHeaderCodSasiu.Text = "Cod sasiu";
+            // 
+            // columnHeaderDenumireAuto
+            // 
+            this.columnHeaderDenumireAuto.Text = "Denumire";
+            this.columnHeaderDenumireAuto.Width = 100;
+            // 
+            // columnHeaderClientAdress
+            // 
+            this.columnHeaderClientAdress.DisplayIndex = 4;
+            this.columnHeaderClientAdress.Text = "Adresa";
+            this.columnHeaderClientAdress.Width = 100;
+            // 
+            // columnHeaderClientLocalitate
+            // 
+            this.columnHeaderClientLocalitate.DisplayIndex = 5;
+            this.columnHeaderClientLocalitate.Text = "Localitate";
+            // 
+            // columnHeaderClientJudet
+            // 
+            this.columnHeaderClientJudet.DisplayIndex = 6;
+            this.columnHeaderClientJudet.Text = "Judet";
+            // 
+            // columnHeaderClientEmail
+            // 
+            this.columnHeaderClientEmail.Text = "Email";
             // 
             // CarServiceForm
             // 
@@ -486,6 +534,13 @@
         private System.Windows.Forms.ToolStripMenuItem showAllMecanicsToolStripMenuItem;
         private System.Windows.Forms.Button buttonClientDelete;
         private System.Windows.Forms.Button buttonOrderUpdate;
+        private System.Windows.Forms.ColumnHeader columnHeaderSerieSasiu;
+        private System.Windows.Forms.ColumnHeader columnHeaderCodSasiu;
+        private System.Windows.Forms.ColumnHeader columnHeaderDenumireAuto;
+        private System.Windows.Forms.ColumnHeader columnHeaderClientAdress;
+        private System.Windows.Forms.ColumnHeader columnHeaderClientLocalitate;
+        private System.Windows.Forms.ColumnHeader columnHeaderClientJudet;
+        private System.Windows.Forms.ColumnHeader columnHeaderClientEmail;
     }
 }
 

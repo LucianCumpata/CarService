@@ -302,8 +302,7 @@ namespace CarService
             Repository<Comanda> comanda = new Repository<Comanda>(GetContext());
 
             var result = _dbContext.ComandaSet.Where(FilterByAutoId(auto.Id));
-            //return auto.List(_dbContext.AutoSet.SqlQuery("SELECT * FROM AutoSet WHERE ClientId = @p0", client.Id));
-            //return auto.List(result);
+ 
             return result;
         }
 
@@ -384,6 +383,20 @@ namespace CarService
                 Repository<DetaliuComanda> detaliuComandaRepository = new Repository<DetaliuComanda>(dbContext);
                 return detaliuComandaRepository.GetById(id);
             }
+        }
+
+        public static IEnumerable<DetaliuComanda> ListDetaliuComandaByComanda(Comanda comanda)
+        {
+            Expression<Func<DetaliuComanda, bool>> FilterByComandaId(int id)
+            {
+                return x => x.ComandaId == id;
+            }
+
+            SetContext(new ModelCarServiceContainer());
+            Repository<DetaliuComanda> detaliuComanda = new Repository<DetaliuComanda>(GetContext());
+
+            var result = _dbContext.DetaliuComandaSet.Where(FilterByComandaId(comanda.Id));
+            return result;
         }
 
         public static void UpdateDetaliuComanda(DetaliuComanda detaliu)

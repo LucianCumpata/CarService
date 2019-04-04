@@ -72,6 +72,7 @@
             // textBoxPrenumeMecanic
             // 
             this.textBoxPrenumeMecanic.Location = new System.Drawing.Point(73, 295);
+            this.textBoxPrenumeMecanic.MaxLength = 15;
             this.textBoxPrenumeMecanic.Name = "textBoxPrenumeMecanic";
             this.textBoxPrenumeMecanic.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrenumeMecanic.TabIndex = 4;
@@ -80,6 +81,7 @@
             // textBoxNumeMecanic
             // 
             this.textBoxNumeMecanic.Location = new System.Drawing.Point(73, 259);
+            this.textBoxNumeMecanic.MaxLength = 15;
             this.textBoxNumeMecanic.Name = "textBoxNumeMecanic";
             this.textBoxNumeMecanic.Size = new System.Drawing.Size(100, 20);
             this.textBoxNumeMecanic.TabIndex = 3;

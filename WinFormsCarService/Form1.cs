@@ -40,7 +40,11 @@ namespace WinFormsCarService
                 item.Text = client.Id.ToString();
                 item.SubItems.Add(client.Nume);
                 item.SubItems.Add(client.Prenume);
+                item.SubItems.Add(client.Adresa);
+                item.SubItems.Add(client.Localitate);
+                item.SubItems.Add(client.Judet);
                 item.SubItems.Add(client.Telefon);
+                item.SubItems.Add(client.Email);
                 listViewClients.Items.Add(item);
             }
             CarServiceAPI.DisposeModelCarServiceContext();
@@ -79,7 +83,11 @@ namespace WinFormsCarService
                 item.Text = client.Id.ToString();
                 item.SubItems.Add(client.Nume);
                 item.SubItems.Add(client.Prenume);
+                item.SubItems.Add(client.Adresa);
+                item.SubItems.Add(client.Localitate);
+                item.SubItems.Add(client.Judet);
                 item.SubItems.Add(client.Telefon);
+                item.SubItems.Add(client.Email);
                 listViewClients.Items.Add(item);
             }
             CarServiceAPI.DisposeModelCarServiceContext();
@@ -112,6 +120,9 @@ namespace WinFormsCarService
                 ListViewItem item = new ListViewItem();
                 item.Text = auto.Id.ToString();
                 item.SubItems.Add(auto.NumarAuto);
+                item.SubItems.Add(auto.SerieSasiu);
+                item.SubItems.Add(auto.Sasiu.CodSasiu);
+                item.SubItems.Add(auto.Sasiu.Denumire);
                 listViewCars.Items.Add(item);
             }
             GUI_WF.SetSelectedClientId(client.Id);

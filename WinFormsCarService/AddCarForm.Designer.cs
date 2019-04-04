@@ -72,6 +72,7 @@
             // textBoxDenumireSasiu
             // 
             this.textBoxDenumireSasiu.Location = new System.Drawing.Point(100, 114);
+            this.textBoxDenumireSasiu.MaxLength = 25;
             this.textBoxDenumireSasiu.Name = "textBoxDenumireSasiu";
             this.textBoxDenumireSasiu.Size = new System.Drawing.Size(100, 20);
             this.textBoxDenumireSasiu.TabIndex = 8;
@@ -80,6 +81,7 @@
             // textBoxCodSasiu
             // 
             this.textBoxCodSasiu.Location = new System.Drawing.Point(100, 80);
+            this.textBoxCodSasiu.MaxLength = 2;
             this.textBoxCodSasiu.Name = "textBoxCodSasiu";
             this.textBoxCodSasiu.Size = new System.Drawing.Size(100, 20);
             this.textBoxCodSasiu.TabIndex = 7;
@@ -88,6 +90,7 @@
             // textBoxSerieSasiu
             // 
             this.textBoxSerieSasiu.Location = new System.Drawing.Point(100, 49);
+            this.textBoxSerieSasiu.MaxLength = 25;
             this.textBoxSerieSasiu.Name = "textBoxSerieSasiu";
             this.textBoxSerieSasiu.Size = new System.Drawing.Size(100, 20);
             this.textBoxSerieSasiu.TabIndex = 6;
@@ -96,6 +99,7 @@
             // textBoxNumarAuto
             // 
             this.textBoxNumarAuto.Location = new System.Drawing.Point(100, 20);
+            this.textBoxNumarAuto.MaxLength = 10;
             this.textBoxNumarAuto.Name = "textBoxNumarAuto";
             this.textBoxNumarAuto.Size = new System.Drawing.Size(100, 20);
             this.textBoxNumarAuto.TabIndex = 4;

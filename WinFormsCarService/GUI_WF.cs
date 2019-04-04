@@ -11,7 +11,8 @@ namespace WinFormsCarService
         private static int _selectedClientId;
         private static int _selectedAutoId;
         private static int _selectedOrderId;
-        private static string _slectedOrderDescription;
+        private static int _selectedMecanicId;
+        //private static string _slectedOrderDescription;
 
         public static void SetSelectedClientId(int id)
         {
@@ -43,6 +44,7 @@ namespace WinFormsCarService
             return _selectedOrderId;
         }
 
+        /*
         public static void SetSelectedOrderDescription(string description)
         {
             _slectedOrderDescription = description;
@@ -52,6 +54,16 @@ namespace WinFormsCarService
         {
             return _slectedOrderDescription;
         }
+        */
 
+        public static void SetSelectedMecanicId(int id)
+        {
+            _selectedMecanicId = id;
+        }
+
+        public static int GetSelectedMecanicId()
+        {
+            return _selectedMecanicId;
+        }
     }
 }

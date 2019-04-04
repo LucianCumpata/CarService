@@ -74,6 +74,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(96, 232);
+            this.textBoxEmail.MaxLength = 50;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(100, 20);
             this.textBoxEmail.TabIndex = 16;
@@ -82,6 +83,7 @@
             // textBoxTelefon
             // 
             this.textBoxTelefon.Location = new System.Drawing.Point(96, 205);
+            this.textBoxTelefon.MaxLength = 13;
             this.textBoxTelefon.Name = "textBoxTelefon";
             this.textBoxTelefon.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelefon.TabIndex = 15;
@@ -90,6 +92,7 @@
             // textBoxJudet
             // 
             this.textBoxJudet.Location = new System.Drawing.Point(96, 167);
+            this.textBoxJudet.MaxLength = 10;
             this.textBoxJudet.Name = "textBoxJudet";
             this.textBoxJudet.Size = new System.Drawing.Size(100, 20);
             this.textBoxJudet.TabIndex = 14;
@@ -98,6 +101,7 @@
             // textBoxLocalitate
             // 
             this.textBoxLocalitate.Location = new System.Drawing.Point(96, 131);
+            this.textBoxLocalitate.MaxLength = 10;
             this.textBoxLocalitate.Name = "textBoxLocalitate";
             this.textBoxLocalitate.Size = new System.Drawing.Size(100, 20);
             this.textBoxLocalitate.TabIndex = 13;
@@ -106,6 +110,7 @@
             // textBoxAdresa
             // 
             this.textBoxAdresa.Location = new System.Drawing.Point(96, 101);
+            this.textBoxAdresa.MaxLength = 50;
             this.textBoxAdresa.Name = "textBoxAdresa";
             this.textBoxAdresa.Size = new System.Drawing.Size(100, 20);
             this.textBoxAdresa.TabIndex = 12;
@@ -114,6 +119,7 @@
             // textBoxPrenume
             // 
             this.textBoxPrenume.Location = new System.Drawing.Point(96, 69);
+            this.textBoxPrenume.MaxLength = 15;
             this.textBoxPrenume.Name = "textBoxPrenume";
             this.textBoxPrenume.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrenume.TabIndex = 11;
@@ -122,6 +128,7 @@
             // textBoxNume
             // 
             this.textBoxNume.Location = new System.Drawing.Point(96, 26);
+            this.textBoxNume.MaxLength = 15;
             this.textBoxNume.Name = "textBoxNume";
             this.textBoxNume.Size = new System.Drawing.Size(100, 20);
             this.textBoxNume.TabIndex = 10;
@@ -130,7 +137,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(13, 239);
+            this.labelEmail.Location = new System.Drawing.Point(9, 239);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 9;
@@ -139,7 +146,7 @@
             // labelTelefon
             // 
             this.labelTelefon.AutoSize = true;
-            this.labelTelefon.Location = new System.Drawing.Point(16, 205);
+            this.labelTelefon.Location = new System.Drawing.Point(9, 205);
             this.labelTelefon.Name = "labelTelefon";
             this.labelTelefon.Size = new System.Drawing.Size(43, 13);
             this.labelTelefon.TabIndex = 8;
@@ -148,7 +155,7 @@
             // labelJudet
             // 
             this.labelJudet.AutoSize = true;
-            this.labelJudet.Location = new System.Drawing.Point(16, 174);
+            this.labelJudet.Location = new System.Drawing.Point(7, 170);
             this.labelJudet.Name = "labelJudet";
             this.labelJudet.Size = new System.Drawing.Size(33, 13);
             this.labelJudet.TabIndex = 7;
@@ -157,7 +164,7 @@
             // labelLocalitate
             // 
             this.labelLocalitate.AutoSize = true;
-            this.labelLocalitate.Location = new System.Drawing.Point(16, 138);
+            this.labelLocalitate.Location = new System.Drawing.Point(9, 138);
             this.labelLocalitate.Name = "labelLocalitate";
             this.labelLocalitate.Size = new System.Drawing.Size(53, 13);
             this.labelLocalitate.TabIndex = 6;
@@ -166,7 +173,7 @@
             // labelAdresa
             // 
             this.labelAdresa.AutoSize = true;
-            this.labelAdresa.Location = new System.Drawing.Point(13, 104);
+            this.labelAdresa.Location = new System.Drawing.Point(9, 104);
             this.labelAdresa.Name = "labelAdresa";
             this.labelAdresa.Size = new System.Drawing.Size(40, 13);
             this.labelAdresa.TabIndex = 5;
@@ -175,7 +182,7 @@
             // labelPrenume
             // 
             this.labelPrenume.AutoSize = true;
-            this.labelPrenume.Location = new System.Drawing.Point(10, 69);
+            this.labelPrenume.Location = new System.Drawing.Point(6, 69);
             this.labelPrenume.Name = "labelPrenume";
             this.labelPrenume.Size = new System.Drawing.Size(49, 13);
             this.labelPrenume.TabIndex = 4;

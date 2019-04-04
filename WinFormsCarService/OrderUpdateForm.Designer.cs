@@ -1,6 +1,6 @@
 ﻿namespace WinFormsCarService
 {
-    partial class NewOrderForm
+    partial class OrderUpdateForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBoxAddNewOrder = new System.Windows.Forms.GroupBox();
-            this.buttonAddNewOrder = new System.Windows.Forms.Button();
+            this.buttonUpdateOrder = new System.Windows.Forms.Button();
             this.richTextBoxOrderDescription = new System.Windows.Forms.RichTextBox();
             this.labelOrderDescription = new System.Windows.Forms.Label();
             this.numericUpDownKm = new System.Windows.Forms.NumericUpDown();
@@ -38,13 +38,19 @@
             this.dateTimePickerOrderStart = new System.Windows.Forms.DateTimePicker();
             this.labelOrderFinishDate = new System.Windows.Forms.Label();
             this.labelOrderStartDate = new System.Windows.Forms.Label();
+            this.radioButtonOrderAwaiting = new System.Windows.Forms.RadioButton();
+            this.radioButtonOrderExecuted = new System.Windows.Forms.RadioButton();
+            this.radioButtonOrderRefused = new System.Windows.Forms.RadioButton();
             this.groupBoxAddNewOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKm)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxAddNewOrder
             // 
-            this.groupBoxAddNewOrder.Controls.Add(this.buttonAddNewOrder);
+            this.groupBoxAddNewOrder.Controls.Add(this.radioButtonOrderRefused);
+            this.groupBoxAddNewOrder.Controls.Add(this.radioButtonOrderExecuted);
+            this.groupBoxAddNewOrder.Controls.Add(this.radioButtonOrderAwaiting);
+            this.groupBoxAddNewOrder.Controls.Add(this.buttonUpdateOrder);
             this.groupBoxAddNewOrder.Controls.Add(this.richTextBoxOrderDescription);
             this.groupBoxAddNewOrder.Controls.Add(this.labelOrderDescription);
             this.groupBoxAddNewOrder.Controls.Add(this.numericUpDownKm);
@@ -53,21 +59,21 @@
             this.groupBoxAddNewOrder.Controls.Add(this.dateTimePickerOrderStart);
             this.groupBoxAddNewOrder.Controls.Add(this.labelOrderFinishDate);
             this.groupBoxAddNewOrder.Controls.Add(this.labelOrderStartDate);
-            this.groupBoxAddNewOrder.Location = new System.Drawing.Point(131, 46);
+            this.groupBoxAddNewOrder.Location = new System.Drawing.Point(215, 12);
             this.groupBoxAddNewOrder.Name = "groupBoxAddNewOrder";
-            this.groupBoxAddNewOrder.Size = new System.Drawing.Size(370, 326);
-            this.groupBoxAddNewOrder.TabIndex = 0;
+            this.groupBoxAddNewOrder.Size = new System.Drawing.Size(370, 426);
+            this.groupBoxAddNewOrder.TabIndex = 1;
             this.groupBoxAddNewOrder.TabStop = false;
             // 
-            // buttonAddNewOrder
+            // buttonUpdateOrder
             // 
-            this.buttonAddNewOrder.Location = new System.Drawing.Point(210, 297);
-            this.buttonAddNewOrder.Name = "buttonAddNewOrder";
-            this.buttonAddNewOrder.Size = new System.Drawing.Size(75, 23);
-            this.buttonAddNewOrder.TabIndex = 8;
-            this.buttonAddNewOrder.Text = "Adauga";
-            this.buttonAddNewOrder.UseVisualStyleBackColor = true;
-            this.buttonAddNewOrder.Click += new System.EventHandler(this.buttonAddNewOrder_Click);
+            this.buttonUpdateOrder.Location = new System.Drawing.Point(208, 397);
+            this.buttonUpdateOrder.Name = "buttonUpdateOrder";
+            this.buttonUpdateOrder.Size = new System.Drawing.Size(75, 23);
+            this.buttonUpdateOrder.TabIndex = 8;
+            this.buttonUpdateOrder.Text = "Modifica";
+            this.buttonUpdateOrder.UseVisualStyleBackColor = true;
+            this.buttonUpdateOrder.Click += new System.EventHandler(this.buttonUpdateOrder_Click);
             // 
             // richTextBoxOrderDescription
             // 
@@ -76,6 +82,7 @@
             this.richTextBoxOrderDescription.Size = new System.Drawing.Size(200, 142);
             this.richTextBoxOrderDescription.TabIndex = 7;
             this.richTextBoxOrderDescription.Text = "";
+            this.richTextBoxOrderDescription.TextChanged += new System.EventHandler(this.richTextBoxOrderDescription_TextChanged);
             // 
             // labelOrderDescription
             // 
@@ -97,6 +104,7 @@
             this.numericUpDownKm.Name = "numericUpDownKm";
             this.numericUpDownKm.Size = new System.Drawing.Size(120, 20);
             this.numericUpDownKm.TabIndex = 5;
+            this.numericUpDownKm.ValueChanged += new System.EventHandler(this.numericUpDownKm_ValueChanged);
             // 
             // labelKm
             // 
@@ -113,6 +121,7 @@
             this.dateTimePickerOrderFinish.Name = "dateTimePickerOrderFinish";
             this.dateTimePickerOrderFinish.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerOrderFinish.TabIndex = 3;
+            this.dateTimePickerOrderFinish.ValueChanged += new System.EventHandler(this.dateTimePickerOrderFinish_ValueChanged);
             // 
             // dateTimePickerOrderStart
             // 
@@ -121,6 +130,7 @@
             this.dateTimePickerOrderStart.Name = "dateTimePickerOrderStart";
             this.dateTimePickerOrderStart.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerOrderStart.TabIndex = 2;
+            this.dateTimePickerOrderStart.ValueChanged += new System.EventHandler(this.dateTimePickerOrderStart_ValueChanged);
             // 
             // labelOrderFinishDate
             // 
@@ -140,14 +150,50 @@
             this.labelOrderStartDate.TabIndex = 0;
             this.labelOrderStartDate.Text = "Data programare";
             // 
-            // NewOrderForm
+            // radioButtonOrderAwaiting
+            // 
+            this.radioButtonOrderAwaiting.AutoSize = true;
+            this.radioButtonOrderAwaiting.Location = new System.Drawing.Point(16, 325);
+            this.radioButtonOrderAwaiting.Name = "radioButtonOrderAwaiting";
+            this.radioButtonOrderAwaiting.Size = new System.Drawing.Size(127, 17);
+            this.radioButtonOrderAwaiting.TabIndex = 9;
+            this.radioButtonOrderAwaiting.TabStop = true;
+            this.radioButtonOrderAwaiting.Text = "comanda in asteptare";
+            this.radioButtonOrderAwaiting.UseVisualStyleBackColor = true;
+            this.radioButtonOrderAwaiting.CheckedChanged += new System.EventHandler(this.radioButtonOrderAwaiting_CheckedChanged);
+            // 
+            // radioButtonOrderExecuted
+            // 
+            this.radioButtonOrderExecuted.AutoSize = true;
+            this.radioButtonOrderExecuted.Location = new System.Drawing.Point(16, 348);
+            this.radioButtonOrderExecuted.Name = "radioButtonOrderExecuted";
+            this.radioButtonOrderExecuted.Size = new System.Drawing.Size(119, 17);
+            this.radioButtonOrderExecuted.TabIndex = 10;
+            this.radioButtonOrderExecuted.TabStop = true;
+            this.radioButtonOrderExecuted.Text = "comanda executata";
+            this.radioButtonOrderExecuted.UseVisualStyleBackColor = true;
+            this.radioButtonOrderExecuted.CheckedChanged += new System.EventHandler(this.radioButtonOrderExecuted_CheckedChanged);
+            // 
+            // radioButtonOrderRefused
+            // 
+            this.radioButtonOrderRefused.AutoSize = true;
+            this.radioButtonOrderRefused.Location = new System.Drawing.Point(16, 371);
+            this.radioButtonOrderRefused.Name = "radioButtonOrderRefused";
+            this.radioButtonOrderRefused.Size = new System.Drawing.Size(110, 17);
+            this.radioButtonOrderRefused.TabIndex = 11;
+            this.radioButtonOrderRefused.TabStop = true;
+            this.radioButtonOrderRefused.Text = "comanda refuzata";
+            this.radioButtonOrderRefused.UseVisualStyleBackColor = true;
+            this.radioButtonOrderRefused.CheckedChanged += new System.EventHandler(this.radioButtonOrderRefused_CheckedChanged);
+            // 
+            // OrderUpdateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBoxAddNewOrder);
-            this.Name = "NewOrderForm";
-            this.Text = "Comanda noua";
+            this.Name = "OrderUpdateForm";
+            this.Text = "OrderUpdateForm";
             this.groupBoxAddNewOrder.ResumeLayout(false);
             this.groupBoxAddNewOrder.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownKm)).EndInit();
@@ -158,14 +204,17 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxAddNewOrder;
-        private System.Windows.Forms.Label labelOrderStartDate;
+        private System.Windows.Forms.Button buttonUpdateOrder;
+        private System.Windows.Forms.RichTextBox richTextBoxOrderDescription;
+        private System.Windows.Forms.Label labelOrderDescription;
+        private System.Windows.Forms.NumericUpDown numericUpDownKm;
+        private System.Windows.Forms.Label labelKm;
         private System.Windows.Forms.DateTimePicker dateTimePickerOrderFinish;
         private System.Windows.Forms.DateTimePicker dateTimePickerOrderStart;
         private System.Windows.Forms.Label labelOrderFinishDate;
-        private System.Windows.Forms.NumericUpDown numericUpDownKm;
-        private System.Windows.Forms.Label labelKm;
-        private System.Windows.Forms.Button buttonAddNewOrder;
-        private System.Windows.Forms.RichTextBox richTextBoxOrderDescription;
-        private System.Windows.Forms.Label labelOrderDescription;
+        private System.Windows.Forms.Label labelOrderStartDate;
+        private System.Windows.Forms.RadioButton radioButtonOrderRefused;
+        private System.Windows.Forms.RadioButton radioButtonOrderExecuted;
+        private System.Windows.Forms.RadioButton radioButtonOrderAwaiting;
     }
 }

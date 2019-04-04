@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 03/21/2019 02:19:36
+-- Date Created: 04/04/2019 00:38:15
 -- Generated from EDMX file: C:\Users\proal_000\Documents\GitHub\CarService\CarService\ModelCarService.edmx
 -- --------------------------------------------------
 
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_ImagineDetaliuComanda]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ImagineSet] DROP CONSTRAINT [FK_ImagineDetaliuComanda];
-GO
 IF OBJECT_ID(N'[dbo].[FK_AutoSasiu]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[AutoSet] DROP CONSTRAINT [FK_AutoSasiu];
 GO
@@ -43,6 +40,9 @@ IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaOperatie]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaMecanic]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DetaliuComandaSet] DROP CONSTRAINT [FK_DetaliuComandaMecanic];
+GO
+IF OBJECT_ID(N'[dbo].[FK_DetaliuComandaImagine]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ImagineSet] DROP CONSTRAINT [FK_DetaliuComandaImagine];
 GO
 
 -- --------------------------------------------------
@@ -242,7 +242,7 @@ ADD CONSTRAINT [FK_AutoSasiu]
     FOREIGN KEY ([SasiuId])
     REFERENCES [dbo].[SasiuSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_AutoSasiu'
@@ -257,7 +257,7 @@ ADD CONSTRAINT [FK_AutoClient]
     FOREIGN KEY ([ClientId])
     REFERENCES [dbo].[ClientSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_AutoClient'
@@ -272,7 +272,7 @@ ADD CONSTRAINT [FK_ComandaAuto]
     FOREIGN KEY ([AutoId])
     REFERENCES [dbo].[AutoSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ComandaAuto'
@@ -302,7 +302,7 @@ ADD CONSTRAINT [FK_ComandaDetaliuComanda]
     FOREIGN KEY ([ComandaId])
     REFERENCES [dbo].[ComandaSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ComandaDetaliuComanda'
@@ -317,7 +317,7 @@ ADD CONSTRAINT [FK_DetaliuComandaMaterial]
     FOREIGN KEY ([MaterialId])
     REFERENCES [dbo].[MaterialSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DetaliuComandaMaterial'
@@ -332,7 +332,7 @@ ADD CONSTRAINT [FK_DetaliuComandaOperatie]
     FOREIGN KEY ([OperatieId])
     REFERENCES [dbo].[OperatieSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DetaliuComandaOperatie'
@@ -362,7 +362,7 @@ ADD CONSTRAINT [FK_DetaliuComandaImagine]
     FOREIGN KEY ([DetaliuComandaId])
     REFERENCES [dbo].[DetaliuComandaSet]
         ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
+    ON DELETE CASCADE ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_DetaliuComandaImagine'

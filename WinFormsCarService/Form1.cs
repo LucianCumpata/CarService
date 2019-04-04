@@ -13,33 +13,39 @@ namespace WinFormsCarService
 {
     public partial class CarServiceForm : Form
     {
-        private string _selectedClientId;
-        private string _selectedAutoId;
-
-        public void SetSelectedClientId(string id)
-        {
-            _selectedClientId = id;
-        }
-
-        public string GetSelectedClientId()
-        {
-            return _selectedClientId;
-        }
-
-        public void SetSelectedAutoId(string id)
-        {
-            _selectedAutoId = id;
-        }
-
-        public string GetSelectedAutoId()
-        {
-            return _selectedAutoId;
-        }
-
         public CarServiceForm()
         {
             InitializeComponent();
+            DisableButtons();
+        }
+
+        private void DisableButtons()
+        {
+            buttonAddCar.Enabled = false;
+            buttonAutoDelete.Enabled = false;
+            buttonAutoUpdate.Enabled = false;
+            buttonNewOrder.Enabled = false;
+            buttonClientDelete.Enabled = false;
+            buttonOrderDetails.Enabled = false;
+            buttonOrderUpdate.Enabled = false;
+        }
+
+        private void ShowClientsList()
+        {
+            IEnumerable<Client> clients = CarServiceAPI.ListAllClients();
+            listViewClients.Items.Clear();
+            foreach (var client in clients)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = client.Id.ToString();
+                item.SubItems.Add(client.Nume);
+                item.SubItems.Add(client.Prenume);
+                item.SubItems.Add(client.Telefon);
+                listViewClients.Items.Add(item);
+            }
+            CarServiceAPI.DisposeModelCarServiceContext();
             
+
         }
 
         private void textBoxNume_TextChanged(object sender, EventArgs e)
@@ -57,23 +63,9 @@ namespace WinFormsCarService
 
         }
 
-      
-
         private void showAllClientsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            IEnumerable<Client> clients = CarServiceAPI.ListAllClients();
-         
-            foreach (var client in clients)
-            {
-                ListViewItem item = new ListViewItem();
-                item.Text = client.Id.ToString();
-                item.SubItems.Add(client.Nume);
-                item.SubItems.Add(client.Prenume);
-                item.SubItems.Add(client.Telefon);
-                listViewClients.Items.Add(item);
-            }   
-            CarServiceAPI.DisposeModelCarServiceContext();
-            
+            ShowClientsList();
         }
 
         private void buttonSearchClient_Click(object sender, EventArgs e)
@@ -98,11 +90,18 @@ namespace WinFormsCarService
         {
             if (listViewClients.SelectedItems.Count == 0)
             {
+                DisableButtons();
+                listViewCars.Items.Clear();
+                listViewOrders.Items.Clear();
+                richTextBoxOrderDescription.Clear();
                 return;
             }
-          
+
+            buttonAddCar.Enabled = true;
+            buttonClientDelete.Enabled = true;
+
             ListViewItem viewItem = listViewClients.SelectedItems[0];
-            //MessageBox.Show(viewItem.Text.ToString());
+         
             var client = CarServiceAPI.GetClientById(int.Parse(viewItem.Text.ToString()));
             
             IEnumerable<Auto> autos = CarServiceAPI.ListAutosByClient(client);
@@ -115,9 +114,9 @@ namespace WinFormsCarService
                 item.SubItems.Add(auto.NumarAuto);
                 listViewCars.Items.Add(item);
             }
-            SetSelectedClientId(client.Id.ToString());
+            GUI_WF.SetSelectedClientId(client.Id);
             CarServiceAPI.DisposeModelCarServiceContext();
-            //MessageBox.Show()
+        
         }
 
         private void newClientToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +133,40 @@ namespace WinFormsCarService
 
         private void listViewCars_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listViewCars.SelectedItems.Count == 0)
+            {
+                DisableButtons();
+                buttonAddCar.Enabled = true;
+                return;
+            }
+
+            buttonAutoUpdate.Enabled = true;
+            buttonAutoDelete.Enabled = true;
+            buttonNewOrder.Enabled = true;
+
+            ListViewItem viewAutoItem = listViewCars.SelectedItems[0];
+
+            //GUI_WF.SetSelectedAutoId(int.Parse(viewCarItem.Text.ToString()));
+
+            var auto = CarServiceAPI.GetAutoById(int.Parse(viewAutoItem.Text.ToString()));
+
+            IEnumerable<Comanda> orders = CarServiceAPI.ListOrdersByAuto(auto);
+
+            listViewOrders.Items.Clear();
+
+            foreach (var order in orders)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = order.Id.ToString();
+                item.SubItems.Add(order.StareComanda);
+                item.SubItems.Add(order.DataSystem.ToString());
+                item.SubItems.Add(order.DataProgramare.ToString());
+                item.SubItems.Add(order.DataFinalizare.ToString());
+                item.SubItems.Add(order.KmBord.ToString());
+                listViewOrders.Items.Add(item);
+            }
+            GUI_WF.SetSelectedAutoId(auto.Id);
+            CarServiceAPI.DisposeModelCarServiceContext();
 
         }
 
@@ -144,7 +177,7 @@ namespace WinFormsCarService
 
         private void buttonAddCar_Click(object sender, EventArgs e)
         {
-            var autoForm = new AddCarForm(GetSelectedClientId());
+            var autoForm = new AddCarForm();
             autoForm.ShowDialog();
         }
 
@@ -167,15 +200,63 @@ namespace WinFormsCarService
 
         private void buttonNewOrder_Click(object sender, EventArgs e)
         {
-            ListViewItem viewClientItem = listViewClients.SelectedItems[0];
-            ListViewItem viewCarItem = listViewCars.SelectedItems[0];
-
-            SetSelectedAutoId(viewCarItem.Text.ToString());
-            SetSelectedClientId(viewClientItem.Text.ToString());
-
-            var newOrderForm = new NewOrderForm(GetSelectedAutoId(),GetSelectedClientId());
+            var newOrderForm = new NewOrderForm();
             newOrderForm.ShowDialog();
+        }
 
+        private void listViewOrders_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listViewOrders.SelectedItems.Count == 0)
+            {
+                buttonOrderDetails.Enabled = false;
+                buttonOrderUpdate.Enabled = false;
+                return;
+            }
+            richTextBoxOrderDescription.Clear();
+
+            buttonOrderDetails.Enabled = true;
+            buttonOrderUpdate.Enabled = true;
+
+            ListViewItem viewItem = listViewOrders.SelectedItems[0];
+            var order = CarServiceAPI.GetComandaById(int.Parse(viewItem.Text.ToString()));
+            GUI_WF.SetSelectedOrderId(order.Id);
+            richTextBoxOrderDescription.Text = order.Descriere;
+
+        }
+
+        private void buttonOrderDetails_Click(object sender, EventArgs e)
+        {
+            var orderDetailsForm = new OrderDetailsForm();
+            orderDetailsForm.ShowDialog();
+        }
+
+        private void richTextBoxOrderDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonClientDelete_Click(object sender, EventArgs e)
+        {
+            if (listViewClients.SelectedItems.Count == 0)
+            {
+                return;
+            }
+
+            ListViewItem viewItem = listViewClients.SelectedItems[0];
+            var client = CarServiceAPI.GetClientById(int.Parse(viewItem.Text.ToString()));
+            CarServiceAPI.DeleteClient(client);
+        }
+
+        private void showAllMecanicsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var mecanicForm = new MecanicForm();
+            mecanicForm.ShowDialog();
+        }
+
+        private void buttonOrderUpdate_Click(object sender, EventArgs e)
+        {
+            var orderUpdateForm = new OrderUpdateForm();
+            orderUpdateForm.ShowDialog();
         }
     }
 }

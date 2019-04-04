@@ -40,11 +40,16 @@ namespace WinFormsCarService
             try
             {
                 CarServiceAPI.AddClient(client);
-
+                MessageBox.Show("Clientul " + client.Nume + " " + client.Prenume + " a fost adaugat cu succes!");
+            
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString(), "Error");
+            }
+            finally
+            {
+                this.Close();
             }
         }
 

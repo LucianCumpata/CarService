@@ -62,7 +62,17 @@
             this.columnHeaderKm = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonOrderDetails = new System.Windows.Forms.Button();
+            this.groupBoxCars = new System.Windows.Forms.GroupBox();
+            this.groupBoxClients = new System.Windows.Forms.GroupBox();
+            this.groupBoxOrders = new System.Windows.Forms.GroupBox();
+            this.richTextBoxOrderDescription = new System.Windows.Forms.RichTextBox();
+            this.showAllMecanicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonClientDelete = new System.Windows.Forms.Button();
+            this.buttonOrderUpdate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
+            this.groupBoxCars.SuspendLayout();
+            this.groupBoxClients.SuspendLayout();
+            this.groupBoxOrders.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -93,27 +103,27 @@
             this.newClientToolStripMenuItem,
             this.newMecanicToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // newClientToolStripMenuItem
             // 
             this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
-            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newClientToolStripMenuItem.Text = "New client";
             this.newClientToolStripMenuItem.Click += new System.EventHandler(this.newClientToolStripMenuItem_Click);
             // 
             // newMecanicToolStripMenuItem
             // 
             this.newMecanicToolStripMenuItem.Name = "newMecanicToolStripMenuItem";
-            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newMecanicToolStripMenuItem.Text = "New mecanic";
             this.newMecanicToolStripMenuItem.Click += new System.EventHandler(this.newMecanicToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -126,7 +136,8 @@
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.showAllClientsToolStripMenuItem});
+            this.showAllClientsToolStripMenuItem,
+            this.showAllMecanicsToolStripMenuItem});
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
             this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.viewToolStripMenuItem.Text = "View";
@@ -134,7 +145,7 @@
             // showAllClientsToolStripMenuItem
             // 
             this.showAllClientsToolStripMenuItem.Name = "showAllClientsToolStripMenuItem";
-            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.showAllClientsToolStripMenuItem.Text = "Show all clients";
             this.showAllClientsToolStripMenuItem.Click += new System.EventHandler(this.showAllClientsToolStripMenuItem_Click);
             // 
@@ -167,7 +178,7 @@
             this.columnHeaderLName,
             this.columnHeaderPhone});
             this.listViewClients.FullRowSelect = true;
-            this.listViewClients.Location = new System.Drawing.Point(26, 44);
+            this.listViewClients.Location = new System.Drawing.Point(8, 22);
             this.listViewClients.MultiSelect = false;
             this.listViewClients.Name = "listViewClients";
             this.listViewClients.Size = new System.Drawing.Size(332, 183);
@@ -194,7 +205,7 @@
             // 
             // textBoxSearchClient
             // 
-            this.textBoxSearchClient.Location = new System.Drawing.Point(26, 239);
+            this.textBoxSearchClient.Location = new System.Drawing.Point(6, 220);
             this.textBoxSearchClient.Name = "textBoxSearchClient";
             this.textBoxSearchClient.Size = new System.Drawing.Size(115, 20);
             this.textBoxSearchClient.TabIndex = 10;
@@ -202,7 +213,7 @@
             // 
             // buttonSearchClient
             // 
-            this.buttonSearchClient.Location = new System.Drawing.Point(186, 239);
+            this.buttonSearchClient.Location = new System.Drawing.Point(166, 222);
             this.buttonSearchClient.Name = "buttonSearchClient";
             this.buttonSearchClient.Size = new System.Drawing.Size(75, 23);
             this.buttonSearchClient.TabIndex = 11;
@@ -216,7 +227,7 @@
             this.columnHeaderCarId,
             this.columnHeaderCarNr});
             this.listViewCars.FullRowSelect = true;
-            this.listViewCars.Location = new System.Drawing.Point(26, 325);
+            this.listViewCars.Location = new System.Drawing.Point(6, 19);
             this.listViewCars.MultiSelect = false;
             this.listViewCars.Name = "listViewCars";
             this.listViewCars.Size = new System.Drawing.Size(332, 183);
@@ -237,7 +248,7 @@
             // 
             // buttonAddCar
             // 
-            this.buttonAddCar.Location = new System.Drawing.Point(26, 526);
+            this.buttonAddCar.Location = new System.Drawing.Point(6, 220);
             this.buttonAddCar.Name = "buttonAddCar";
             this.buttonAddCar.Size = new System.Drawing.Size(73, 23);
             this.buttonAddCar.TabIndex = 13;
@@ -247,7 +258,7 @@
             // 
             // buttonAutoDelete
             // 
-            this.buttonAutoDelete.Location = new System.Drawing.Point(186, 526);
+            this.buttonAutoDelete.Location = new System.Drawing.Point(166, 220);
             this.buttonAutoDelete.Name = "buttonAutoDelete";
             this.buttonAutoDelete.Size = new System.Drawing.Size(75, 23);
             this.buttonAutoDelete.TabIndex = 14;
@@ -257,7 +268,7 @@
             // 
             // buttonAutoUpdate
             // 
-            this.buttonAutoUpdate.Location = new System.Drawing.Point(105, 526);
+            this.buttonAutoUpdate.Location = new System.Drawing.Point(85, 220);
             this.buttonAutoUpdate.Name = "buttonAutoUpdate";
             this.buttonAutoUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonAutoUpdate.TabIndex = 15;
@@ -273,13 +284,16 @@
             this.columnHeaderDateStart,
             this.columnHeaderDateFinish,
             this.columnHeaderKm});
-            this.listViewOrders.Location = new System.Drawing.Point(410, 44);
+            this.listViewOrders.FullRowSelect = true;
+            this.listViewOrders.GridLines = true;
+            this.listViewOrders.Location = new System.Drawing.Point(8, 19);
             this.listViewOrders.MultiSelect = false;
             this.listViewOrders.Name = "listViewOrders";
-            this.listViewOrders.Size = new System.Drawing.Size(362, 183);
+            this.listViewOrders.Size = new System.Drawing.Size(414, 155);
             this.listViewOrders.TabIndex = 16;
             this.listViewOrders.UseCompatibleStateImageBehavior = false;
             this.listViewOrders.View = System.Windows.Forms.View.Details;
+            this.listViewOrders.SelectedIndexChanged += new System.EventHandler(this.listViewOrders_SelectedIndexChanged);
             // 
             // columnHeaderOrderID
             // 
@@ -309,7 +323,7 @@
             // 
             // buttonNewOrder
             // 
-            this.buttonNewOrder.Location = new System.Drawing.Point(268, 526);
+            this.buttonNewOrder.Location = new System.Drawing.Point(248, 220);
             this.buttonNewOrder.Name = "buttonNewOrder";
             this.buttonNewOrder.Size = new System.Drawing.Size(90, 23);
             this.buttonNewOrder.TabIndex = 17;
@@ -319,28 +333,101 @@
             // 
             // buttonOrderDetails
             // 
-            this.buttonOrderDetails.Location = new System.Drawing.Point(410, 238);
+            this.buttonOrderDetails.Location = new System.Drawing.Point(8, 180);
             this.buttonOrderDetails.Name = "buttonOrderDetails";
-            this.buttonOrderDetails.Size = new System.Drawing.Size(75, 23);
+            this.buttonOrderDetails.Size = new System.Drawing.Size(113, 23);
             this.buttonOrderDetails.TabIndex = 18;
-            this.buttonOrderDetails.Text = "Detalii";
+            this.buttonOrderDetails.Text = "Detalii comanda";
             this.buttonOrderDetails.UseVisualStyleBackColor = true;
+            this.buttonOrderDetails.Click += new System.EventHandler(this.buttonOrderDetails_Click);
+            // 
+            // groupBoxCars
+            // 
+            this.groupBoxCars.Controls.Add(this.listViewCars);
+            this.groupBoxCars.Controls.Add(this.buttonAddCar);
+            this.groupBoxCars.Controls.Add(this.buttonNewOrder);
+            this.groupBoxCars.Controls.Add(this.buttonAutoDelete);
+            this.groupBoxCars.Controls.Add(this.buttonAutoUpdate);
+            this.groupBoxCars.Location = new System.Drawing.Point(396, 27);
+            this.groupBoxCars.Name = "groupBoxCars";
+            this.groupBoxCars.Size = new System.Drawing.Size(376, 250);
+            this.groupBoxCars.TabIndex = 19;
+            this.groupBoxCars.TabStop = false;
+            this.groupBoxCars.Text = "Masini";
+            // 
+            // groupBoxClients
+            // 
+            this.groupBoxClients.Controls.Add(this.buttonClientDelete);
+            this.groupBoxClients.Controls.Add(this.listViewClients);
+            this.groupBoxClients.Controls.Add(this.textBoxSearchClient);
+            this.groupBoxClients.Controls.Add(this.buttonSearchClient);
+            this.groupBoxClients.Location = new System.Drawing.Point(12, 27);
+            this.groupBoxClients.Name = "groupBoxClients";
+            this.groupBoxClients.Size = new System.Drawing.Size(372, 284);
+            this.groupBoxClients.TabIndex = 20;
+            this.groupBoxClients.TabStop = false;
+            this.groupBoxClients.Text = "Clienti";
+            // 
+            // groupBoxOrders
+            // 
+            this.groupBoxOrders.Controls.Add(this.buttonOrderUpdate);
+            this.groupBoxOrders.Controls.Add(this.richTextBoxOrderDescription);
+            this.groupBoxOrders.Controls.Add(this.listViewOrders);
+            this.groupBoxOrders.Controls.Add(this.buttonOrderDetails);
+            this.groupBoxOrders.Location = new System.Drawing.Point(12, 336);
+            this.groupBoxOrders.Name = "groupBoxOrders";
+            this.groupBoxOrders.Size = new System.Drawing.Size(760, 213);
+            this.groupBoxOrders.TabIndex = 21;
+            this.groupBoxOrders.TabStop = false;
+            this.groupBoxOrders.Text = "Comenzi";
+            // 
+            // richTextBoxOrderDescription
+            // 
+            this.richTextBoxOrderDescription.Enabled = false;
+            this.richTextBoxOrderDescription.Location = new System.Drawing.Point(444, 19);
+            this.richTextBoxOrderDescription.MaxLength = 1024;
+            this.richTextBoxOrderDescription.Name = "richTextBoxOrderDescription";
+            this.richTextBoxOrderDescription.ReadOnly = true;
+            this.richTextBoxOrderDescription.Size = new System.Drawing.Size(278, 155);
+            this.richTextBoxOrderDescription.TabIndex = 19;
+            this.richTextBoxOrderDescription.Text = "";
+            this.richTextBoxOrderDescription.TextChanged += new System.EventHandler(this.richTextBoxOrderDescription_TextChanged);
+            // 
+            // showAllMecanicsToolStripMenuItem
+            // 
+            this.showAllMecanicsToolStripMenuItem.Name = "showAllMecanicsToolStripMenuItem";
+            this.showAllMecanicsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showAllMecanicsToolStripMenuItem.Text = "Show all mecanics";
+            this.showAllMecanicsToolStripMenuItem.Click += new System.EventHandler(this.showAllMecanicsToolStripMenuItem_Click);
+            // 
+            // buttonClientDelete
+            // 
+            this.buttonClientDelete.Location = new System.Drawing.Point(265, 222);
+            this.buttonClientDelete.Name = "buttonClientDelete";
+            this.buttonClientDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonClientDelete.TabIndex = 12;
+            this.buttonClientDelete.Text = "Sterge";
+            this.buttonClientDelete.UseVisualStyleBackColor = true;
+            this.buttonClientDelete.Click += new System.EventHandler(this.buttonClientDelete_Click);
+            // 
+            // buttonOrderUpdate
+            // 
+            this.buttonOrderUpdate.Location = new System.Drawing.Point(128, 179);
+            this.buttonOrderUpdate.Name = "buttonOrderUpdate";
+            this.buttonOrderUpdate.Size = new System.Drawing.Size(113, 23);
+            this.buttonOrderUpdate.TabIndex = 20;
+            this.buttonOrderUpdate.Text = "Modifica comanda";
+            this.buttonOrderUpdate.UseVisualStyleBackColor = true;
+            this.buttonOrderUpdate.Click += new System.EventHandler(this.buttonOrderUpdate_Click);
             // 
             // CarServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.buttonOrderDetails);
-            this.Controls.Add(this.buttonNewOrder);
-            this.Controls.Add(this.listViewOrders);
-            this.Controls.Add(this.buttonAutoUpdate);
-            this.Controls.Add(this.buttonAutoDelete);
-            this.Controls.Add(this.buttonAddCar);
-            this.Controls.Add(this.listViewCars);
-            this.Controls.Add(this.buttonSearchClient);
-            this.Controls.Add(this.textBoxSearchClient);
-            this.Controls.Add(this.listViewClients);
+            this.Controls.Add(this.groupBoxOrders);
+            this.Controls.Add(this.groupBoxClients);
+            this.Controls.Add(this.groupBoxCars);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "CarServiceForm";
@@ -348,6 +435,10 @@
             this.Load += new System.EventHandler(this.CarServiceForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBoxCars.ResumeLayout(false);
+            this.groupBoxClients.ResumeLayout(false);
+            this.groupBoxClients.PerformLayout();
+            this.groupBoxOrders.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,6 +479,13 @@
         private System.Windows.Forms.ColumnHeader columnHeaderKm;
         private System.Windows.Forms.Button buttonNewOrder;
         private System.Windows.Forms.Button buttonOrderDetails;
+        private System.Windows.Forms.GroupBox groupBoxCars;
+        private System.Windows.Forms.GroupBox groupBoxClients;
+        private System.Windows.Forms.GroupBox groupBoxOrders;
+        private System.Windows.Forms.RichTextBox richTextBoxOrderDescription;
+        private System.Windows.Forms.ToolStripMenuItem showAllMecanicsToolStripMenuItem;
+        private System.Windows.Forms.Button buttonClientDelete;
+        private System.Windows.Forms.Button buttonOrderUpdate;
     }
 }
 

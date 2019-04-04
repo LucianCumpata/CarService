@@ -53,7 +53,10 @@ namespace CarService
 
         public void Delete(T entity)
         {
-            _dbContext.Set<T>().Attach(entity);
+            //_dbContext.Set<T>().Attach(entity);
+            bool isDetached = _dbContext.Entry(entity).State == EntityState.Detached;
+            if (isDetached)
+                _dbContext.Set<T>().Attach(entity);
             _dbContext.Set<T>().Remove(entity);
             _dbContext.SaveChanges();
         }

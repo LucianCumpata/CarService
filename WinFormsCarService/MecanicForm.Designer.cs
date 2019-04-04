@@ -30,62 +30,48 @@
         {
             this.groupBoxMecanics = new System.Windows.Forms.GroupBox();
             this.buttonMecanicUpdate = new System.Windows.Forms.Button();
-            this.textBoxMecanicId = new System.Windows.Forms.TextBox();
-            this.labelMecanicId = new System.Windows.Forms.Label();
             this.textBoxPrenumeMecanic = new System.Windows.Forms.TextBox();
             this.textBoxNumeMecanic = new System.Windows.Forms.TextBox();
             this.labelMacanicPrenume = new System.Windows.Forms.Label();
             this.labelMecanicNume = new System.Windows.Forms.Label();
             this.buttonAddMecanic = new System.Windows.Forms.Button();
+            this.listViewMecanics = new System.Windows.Forms.ListView();
+            this.columnHeaderMecanicId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderMecanicFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderMecanicLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.buttonMecanicDelete = new System.Windows.Forms.Button();
             this.groupBoxMecanics.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxMecanics
             // 
+            this.groupBoxMecanics.Controls.Add(this.buttonMecanicDelete);
+            this.groupBoxMecanics.Controls.Add(this.listViewMecanics);
             this.groupBoxMecanics.Controls.Add(this.buttonMecanicUpdate);
-            this.groupBoxMecanics.Controls.Add(this.textBoxMecanicId);
-            this.groupBoxMecanics.Controls.Add(this.labelMecanicId);
             this.groupBoxMecanics.Controls.Add(this.textBoxPrenumeMecanic);
             this.groupBoxMecanics.Controls.Add(this.textBoxNumeMecanic);
             this.groupBoxMecanics.Controls.Add(this.labelMacanicPrenume);
             this.groupBoxMecanics.Controls.Add(this.labelMecanicNume);
             this.groupBoxMecanics.Controls.Add(this.buttonAddMecanic);
-            this.groupBoxMecanics.Location = new System.Drawing.Point(149, 164);
+            this.groupBoxMecanics.Location = new System.Drawing.Point(141, 34);
             this.groupBoxMecanics.Name = "groupBoxMecanics";
-            this.groupBoxMecanics.Size = new System.Drawing.Size(306, 122);
+            this.groupBoxMecanics.Size = new System.Drawing.Size(306, 358);
             this.groupBoxMecanics.TabIndex = 8;
             this.groupBoxMecanics.TabStop = false;
             this.groupBoxMecanics.Text = "Mecanic";
             // 
             // buttonMecanicUpdate
             // 
-            this.buttonMecanicUpdate.Location = new System.Drawing.Point(196, 67);
+            this.buttonMecanicUpdate.Location = new System.Drawing.Point(127, 203);
             this.buttonMecanicUpdate.Name = "buttonMecanicUpdate";
             this.buttonMecanicUpdate.Size = new System.Drawing.Size(75, 23);
             this.buttonMecanicUpdate.TabIndex = 7;
-            this.buttonMecanicUpdate.Text = "Update";
+            this.buttonMecanicUpdate.Text = "Modifica";
             this.buttonMecanicUpdate.UseVisualStyleBackColor = true;
-            // 
-            // textBoxMecanicId
-            // 
-            this.textBoxMecanicId.Location = new System.Drawing.Point(72, 96);
-            this.textBoxMecanicId.Name = "textBoxMecanicId";
-            this.textBoxMecanicId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMecanicId.TabIndex = 6;
-            this.textBoxMecanicId.TextChanged += new System.EventHandler(this.textBoxMecanicId_TextChanged);
-            // 
-            // labelMecanicId
-            // 
-            this.labelMecanicId.AutoSize = true;
-            this.labelMecanicId.Location = new System.Drawing.Point(16, 103);
-            this.labelMecanicId.Name = "labelMecanicId";
-            this.labelMecanicId.Size = new System.Drawing.Size(16, 13);
-            this.labelMecanicId.TabIndex = 5;
-            this.labelMecanicId.Text = "Id";
             // 
             // textBoxPrenumeMecanic
             // 
-            this.textBoxPrenumeMecanic.Location = new System.Drawing.Point(72, 71);
+            this.textBoxPrenumeMecanic.Location = new System.Drawing.Point(73, 295);
             this.textBoxPrenumeMecanic.Name = "textBoxPrenumeMecanic";
             this.textBoxPrenumeMecanic.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrenumeMecanic.TabIndex = 4;
@@ -93,7 +79,7 @@
             // 
             // textBoxNumeMecanic
             // 
-            this.textBoxNumeMecanic.Location = new System.Drawing.Point(72, 33);
+            this.textBoxNumeMecanic.Location = new System.Drawing.Point(73, 259);
             this.textBoxNumeMecanic.Name = "textBoxNumeMecanic";
             this.textBoxNumeMecanic.Size = new System.Drawing.Size(100, 20);
             this.textBoxNumeMecanic.TabIndex = 3;
@@ -102,7 +88,7 @@
             // labelMacanicPrenume
             // 
             this.labelMacanicPrenume.AutoSize = true;
-            this.labelMacanicPrenume.Location = new System.Drawing.Point(13, 71);
+            this.labelMacanicPrenume.Location = new System.Drawing.Point(14, 295);
             this.labelMacanicPrenume.Name = "labelMacanicPrenume";
             this.labelMacanicPrenume.Size = new System.Drawing.Size(49, 13);
             this.labelMacanicPrenume.TabIndex = 2;
@@ -111,7 +97,7 @@
             // labelMecanicNume
             // 
             this.labelMecanicNume.AutoSize = true;
-            this.labelMecanicNume.Location = new System.Drawing.Point(13, 33);
+            this.labelMecanicNume.Location = new System.Drawing.Point(14, 259);
             this.labelMecanicNume.Name = "labelMecanicNume";
             this.labelMecanicNume.Size = new System.Drawing.Size(35, 13);
             this.labelMecanicNume.TabIndex = 1;
@@ -119,13 +105,51 @@
             // 
             // buttonAddMecanic
             // 
-            this.buttonAddMecanic.Location = new System.Drawing.Point(196, 33);
+            this.buttonAddMecanic.Location = new System.Drawing.Point(17, 203);
             this.buttonAddMecanic.Name = "buttonAddMecanic";
-            this.buttonAddMecanic.Size = new System.Drawing.Size(82, 23);
+            this.buttonAddMecanic.Size = new System.Drawing.Size(104, 23);
             this.buttonAddMecanic.TabIndex = 0;
-            this.buttonAddMecanic.Text = "Add mecanic";
+            this.buttonAddMecanic.Text = "Adauga mecanic";
             this.buttonAddMecanic.UseVisualStyleBackColor = true;
             this.buttonAddMecanic.Click += new System.EventHandler(this.buttonAddMecanic_Click_1);
+            // 
+            // listViewMecanics
+            // 
+            this.listViewMecanics.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderMecanicId,
+            this.columnHeaderMecanicFName,
+            this.columnHeaderMecanicLName});
+            this.listViewMecanics.FullRowSelect = true;
+            this.listViewMecanics.Location = new System.Drawing.Point(17, 19);
+            this.listViewMecanics.MultiSelect = false;
+            this.listViewMecanics.Name = "listViewMecanics";
+            this.listViewMecanics.Size = new System.Drawing.Size(283, 178);
+            this.listViewMecanics.TabIndex = 9;
+            this.listViewMecanics.UseCompatibleStateImageBehavior = false;
+            this.listViewMecanics.View = System.Windows.Forms.View.Details;
+            this.listViewMecanics.SelectedIndexChanged += new System.EventHandler(this.listViewMecanics_SelectedIndexChanged);
+            // 
+            // columnHeaderMecanicId
+            // 
+            this.columnHeaderMecanicId.Text = "Id";
+            // 
+            // columnHeaderMecanicFName
+            // 
+            this.columnHeaderMecanicFName.Text = "Nume";
+            // 
+            // columnHeaderMecanicLName
+            // 
+            this.columnHeaderMecanicLName.Text = "Prenume";
+            // 
+            // buttonMecanicDelete
+            // 
+            this.buttonMecanicDelete.Location = new System.Drawing.Point(208, 203);
+            this.buttonMecanicDelete.Name = "buttonMecanicDelete";
+            this.buttonMecanicDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonMecanicDelete.TabIndex = 10;
+            this.buttonMecanicDelete.Text = "Sterge";
+            this.buttonMecanicDelete.UseVisualStyleBackColor = true;
+            this.buttonMecanicDelete.Click += new System.EventHandler(this.buttonMecanicDelete_Click);
             // 
             // MecanicForm
             // 
@@ -146,12 +170,15 @@
 
         private System.Windows.Forms.GroupBox groupBoxMecanics;
         private System.Windows.Forms.Button buttonMecanicUpdate;
-        private System.Windows.Forms.TextBox textBoxMecanicId;
-        private System.Windows.Forms.Label labelMecanicId;
         private System.Windows.Forms.TextBox textBoxPrenumeMecanic;
         private System.Windows.Forms.TextBox textBoxNumeMecanic;
         private System.Windows.Forms.Label labelMacanicPrenume;
         private System.Windows.Forms.Label labelMecanicNume;
         private System.Windows.Forms.Button buttonAddMecanic;
+        private System.Windows.Forms.ListView listViewMecanics;
+        private System.Windows.Forms.ColumnHeader columnHeaderMecanicId;
+        private System.Windows.Forms.ColumnHeader columnHeaderMecanicFName;
+        private System.Windows.Forms.ColumnHeader columnHeaderMecanicLName;
+        private System.Windows.Forms.Button buttonMecanicDelete;
     }
 }

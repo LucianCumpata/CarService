@@ -15,6 +15,12 @@ namespace WinFormsCarService
         public OrderDetailsForm()
         {
             InitializeComponent();
+
+        }
+
+        private void richTextBoxOrderDescription_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

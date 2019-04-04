@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.Validation;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -53,6 +55,12 @@ namespace CarService
             }
         }
 
+        public static IEnumerable<Mecanic> ListAllMecanics()
+        {
+            SetContext(new ModelCarServiceContainer());
+            Repository<Mecanic> mecanic = new Repository<Mecanic>(GetContext());
+            return mecanic.List();
+        }
         public static void UpdateMecanic(Mecanic m)
         {
             using (ModelCarServiceContainer dbContext = new ModelCarServiceContainer())
@@ -76,18 +84,9 @@ namespace CarService
         {
             SetContext(new ModelCarServiceContainer());
             Repository<Client> client = new Repository<Client>(GetContext());
+            var context = GetContext();
             return client.List();
         }
-
-        /*
-        public static IEnumerable<Client> ListClientsByName(string n)
-        {
-            SetContext(new ModelCarServiceContainer());
-            Repository<Client> client = new Repository<Client>(GetContext());
-            var clientsByName = _dbContext.ClientSet.SelectMany(c => c.Nume);
-            return clientsByName;
-        }
-        */
 
         public static void DeleteClient(Client c)
         {
@@ -100,11 +99,10 @@ namespace CarService
 
         public static Client GetClientById(int id)
         {
-            using (ModelCarServiceContainer dbContext = new ModelCarServiceContainer())
-            {
-                Repository<Client> client = new Repository<Client>(dbContext);
-                return client.GetById(id);
-            }
+            SetContext(new ModelCarServiceContainer());
+            Repository<Client> client = new Repository<Client>(GetContext());
+            return client.GetById(id);
+           
         }
 
         public static IEnumerable<Client> ListClientsByName(string name)
@@ -265,13 +263,14 @@ namespace CarService
 
         public static void AddComanda(Comanda comanda, Client client, Auto auto)
         {
-            using (ModelCarServiceContainer dbContext = new ModelCarServiceContainer())
-            {
-                Repository<Comanda> comandaRepository = new Repository<Comanda>(dbContext);
-                comanda.ClientId = client.Id;
-                comanda.AutoId = auto.Id;
-                comandaRepository.Add(comanda);
-            }
+            SetContext(new ModelCarServiceContainer());
+            Repository<Comanda> comandaRepository = new Repository<Comanda>(GetContext());
+            comanda.ClientId = client.Id;
+            comanda.AutoId = auto.Id;
+            comanda.StareComanda = "In asteptare";
+            var _dataSystem = new SqlDateTime(DateTime.Now);
+            comanda.DataSystem = _dataSystem.Value;
+            comandaRepository.Add(comanda);
         }
 
         public static void DeleteComanda(Comanda comanda)
@@ -290,6 +289,22 @@ namespace CarService
                 Repository<Comanda> comandaRepository = new Repository<Comanda>(dbContext);
                 return comandaRepository.GetById(id);
             }
+        }
+
+        public static IEnumerable<Comanda> ListOrdersByAuto(Auto auto)
+        {
+            Expression<Func<Comanda, bool>> FilterByAutoId(int id)
+            {
+                return x => x.AutoId == id;
+            }
+
+            SetContext(new ModelCarServiceContainer());
+            Repository<Comanda> comanda = new Repository<Comanda>(GetContext());
+
+            var result = _dbContext.ComandaSet.Where(FilterByAutoId(auto.Id));
+            //return auto.List(_dbContext.AutoSet.SqlQuery("SELECT * FROM AutoSet WHERE ClientId = @p0", client.Id));
+            //return auto.List(result);
+            return result;
         }
 
         public static void UpdateComanda(Comanda comanda)

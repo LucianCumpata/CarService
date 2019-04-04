@@ -13,12 +13,9 @@ namespace WinFormsCarService
 {
     public partial class AddCarForm : Form
     {
-        private string _selectedClientId;
-
-        public AddCarForm(string selectedClientId)
+        public AddCarForm()
         {
             InitializeComponent();
-            _selectedClientId = selectedClientId;
         }
 
 
@@ -50,7 +47,7 @@ namespace WinFormsCarService
             string serieSasiu = textBoxSerieSasiu.Text.ToString();
             string codSasiu = textBoxCodSasiu.Text.ToString();
             string denumireSasiu = textBoxDenumireSasiu.Text.ToString();
-            string idClient = (_selectedClientId);
+            string idClient = (GUI_WF.GetSelectedClientId().ToString());
 
 
             Auto a = new Auto();

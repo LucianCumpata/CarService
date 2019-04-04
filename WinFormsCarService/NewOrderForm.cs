@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,35 +14,45 @@ namespace WinFormsCarService
 {
     public partial class NewOrderForm : Form
     {
-        private string _selectedClientId;
-        private string _selectedAutoId;
 
-        public NewOrderForm(string clientId, string autoId)
+        public NewOrderForm()
         {
             InitializeComponent();
-            _selectedAutoId = autoId;
-            _selectedClientId = clientId;
         }
 
         private void buttonAddNewOrder_Click(object sender, EventArgs e)
         {
             var comanda = new Comanda();
-            var client = CarServiceAPI.GetClientById(int.Parse(_selectedClientId));
-            var auto = CarServiceAPI.GetAutoById(int.Parse(_selectedAutoId));
+            var client = CarServiceAPI.GetClientById(GUI_WF.GetSelectedClientId());
+            var auto = CarServiceAPI.GetAutoById(GUI_WF.GetSelectedAutoId());
 
             string description = richTextBoxOrderDescription.Text.ToString();
             decimal kmBord = numericUpDownKm.Value;
-            //var orderStartDate = dateTimePickerOrderStart.Value.ToString("dd-MM-yyyy");
-            var orderStartDate = dateTimePickerOrderStart.Value;
-            var orderFinishDate = dateTimePickerOrderFinish.Value;
+            var orderStartDate = new SqlDateTime(dateTimePickerOrderStart.Value);
+            var orderFinishDate = new SqlDateTime(dateTimePickerOrderFinish.Value);
+
 
             comanda.KmBord = int.Parse(kmBord.ToString());
             comanda.Descriere = description;
-            comanda.DataProgramare = orderStartDate;
-            comanda.DataFinalizare = orderFinishDate;
+            comanda.DataProgramare = orderStartDate.Value;
+            comanda.DataFinalizare = orderFinishDate.Value;
 
-            CarServiceAPI.AddComanda(comanda, client, auto);
-
+            try
+            {
+                CarServiceAPI.AddComanda(comanda, client, auto);
+                MessageBox.Show("Comanda a fost adaugata cu succes!");
+                richTextBoxOrderDescription.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                CarServiceAPI.DisposeModelCarServiceContext();
+            }
+            
+            
         }
     }
 }

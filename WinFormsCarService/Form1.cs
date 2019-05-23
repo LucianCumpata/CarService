@@ -48,6 +48,7 @@ namespace WinFormsCarService
                 listViewClients.Items.Add(item);
             }
             CarServiceAPI.DisposeModelCarServiceContext();
+            //ModelCarServiceContainer car = new ModelCarServiceContainer();
             
 
         }
@@ -255,7 +256,15 @@ namespace WinFormsCarService
 
             ListViewItem viewItem = listViewClients.SelectedItems[0];
             var client = CarServiceAPI.GetClientById(int.Parse(viewItem.Text.ToString()));
-            CarServiceAPI.DeleteClient(client);
+            try
+            {
+                CarServiceAPI.DeleteClient(client);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void showAllMecanicsToolStripMenuItem_Click(object sender, EventArgs e)

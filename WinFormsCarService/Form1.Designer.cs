@@ -37,6 +37,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showAllClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllMecanicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,12 +45,19 @@
             this.columnHeaderId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderFName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientAdress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientLocalitate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientJudet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderPhone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderClientEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBoxSearchClient = new System.Windows.Forms.TextBox();
             this.buttonSearchClient = new System.Windows.Forms.Button();
             this.listViewCars = new System.Windows.Forms.ListView();
             this.columnHeaderCarId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderCarNr = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSerieSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderCodSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderDenumireAuto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonAddCar = new System.Windows.Forms.Button();
             this.buttonAutoDelete = new System.Windows.Forms.Button();
             this.buttonAutoUpdate = new System.Windows.Forms.Button();
@@ -64,18 +72,10 @@
             this.buttonOrderDetails = new System.Windows.Forms.Button();
             this.groupBoxCars = new System.Windows.Forms.GroupBox();
             this.groupBoxClients = new System.Windows.Forms.GroupBox();
-            this.groupBoxOrders = new System.Windows.Forms.GroupBox();
-            this.richTextBoxOrderDescription = new System.Windows.Forms.RichTextBox();
-            this.showAllMecanicsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonClientDelete = new System.Windows.Forms.Button();
+            this.groupBoxOrders = new System.Windows.Forms.GroupBox();
             this.buttonOrderUpdate = new System.Windows.Forms.Button();
-            this.columnHeaderSerieSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderCodSasiu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderDenumireAuto = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderClientAdress = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderClientLocalitate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderClientJudet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderClientEmail = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.richTextBoxOrderDescription = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBoxCars.SuspendLayout();
             this.groupBoxClients.SuspendLayout();
@@ -110,27 +110,27 @@
             this.newClientToolStripMenuItem,
             this.newMecanicToolStripMenuItem});
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.addToolStripMenuItem.Text = "Add";
             // 
             // newClientToolStripMenuItem
             // 
             this.newClientToolStripMenuItem.Name = "newClientToolStripMenuItem";
-            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newClientToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newClientToolStripMenuItem.Text = "New client";
             this.newClientToolStripMenuItem.Click += new System.EventHandler(this.newClientToolStripMenuItem_Click);
             // 
             // newMecanicToolStripMenuItem
             // 
             this.newMecanicToolStripMenuItem.Name = "newMecanicToolStripMenuItem";
-            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newMecanicToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.newMecanicToolStripMenuItem.Text = "New mecanic";
             this.newMecanicToolStripMenuItem.Click += new System.EventHandler(this.newMecanicToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -152,9 +152,16 @@
             // showAllClientsToolStripMenuItem
             // 
             this.showAllClientsToolStripMenuItem.Name = "showAllClientsToolStripMenuItem";
-            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showAllClientsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.showAllClientsToolStripMenuItem.Text = "Show all clients";
             this.showAllClientsToolStripMenuItem.Click += new System.EventHandler(this.showAllClientsToolStripMenuItem_Click);
+            // 
+            // showAllMecanicsToolStripMenuItem
+            // 
+            this.showAllMecanicsToolStripMenuItem.Name = "showAllMecanicsToolStripMenuItem";
+            this.showAllMecanicsToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.showAllMecanicsToolStripMenuItem.Text = "Show all mecanics";
+            this.showAllMecanicsToolStripMenuItem.Click += new System.EventHandler(this.showAllMecanicsToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -210,10 +217,30 @@
             // 
             this.columnHeaderLName.Text = "Prenume";
             // 
+            // columnHeaderClientAdress
+            // 
+            this.columnHeaderClientAdress.DisplayIndex = 4;
+            this.columnHeaderClientAdress.Text = "Adresa";
+            this.columnHeaderClientAdress.Width = 100;
+            // 
+            // columnHeaderClientLocalitate
+            // 
+            this.columnHeaderClientLocalitate.DisplayIndex = 5;
+            this.columnHeaderClientLocalitate.Text = "Localitate";
+            // 
+            // columnHeaderClientJudet
+            // 
+            this.columnHeaderClientJudet.DisplayIndex = 6;
+            this.columnHeaderClientJudet.Text = "Judet";
+            // 
             // columnHeaderPhone
             // 
             this.columnHeaderPhone.DisplayIndex = 3;
             this.columnHeaderPhone.Text = "Telefon";
+            // 
+            // columnHeaderClientEmail
+            // 
+            this.columnHeaderClientEmail.Text = "Email";
             // 
             // textBoxSearchClient
             // 
@@ -245,7 +272,7 @@
             this.listViewCars.Location = new System.Drawing.Point(6, 19);
             this.listViewCars.MultiSelect = false;
             this.listViewCars.Name = "listViewCars";
-            this.listViewCars.Size = new System.Drawing.Size(332, 183);
+            this.listViewCars.Size = new System.Drawing.Size(364, 183);
             this.listViewCars.TabIndex = 12;
             this.listViewCars.UseCompatibleStateImageBehavior = false;
             this.listViewCars.View = System.Windows.Forms.View.Details;
@@ -260,6 +287,20 @@
             // 
             this.columnHeaderCarNr.Text = "Numar Auto";
             this.columnHeaderCarNr.Width = 73;
+            // 
+            // columnHeaderSerieSasiu
+            // 
+            this.columnHeaderSerieSasiu.Text = "SerieSasiu";
+            this.columnHeaderSerieSasiu.Width = 75;
+            // 
+            // columnHeaderCodSasiu
+            // 
+            this.columnHeaderCodSasiu.Text = "Cod sasiu";
+            // 
+            // columnHeaderDenumireAuto
+            // 
+            this.columnHeaderDenumireAuto.Text = "Denumire";
+            this.columnHeaderDenumireAuto.Width = 100;
             // 
             // buttonAddCar
             // 
@@ -323,14 +364,17 @@
             // columnHeaderDateSystem
             // 
             this.columnHeaderDateSystem.Text = "Data sistem";
+            this.columnHeaderDateSystem.Width = 75;
             // 
             // columnHeaderDateStart
             // 
             this.columnHeaderDateStart.Text = "Data incepere";
+            this.columnHeaderDateStart.Width = 75;
             // 
             // columnHeaderDateFinish
             // 
             this.columnHeaderDateFinish.Text = "Data terminare";
+            this.columnHeaderDateFinish.Width = 75;
             // 
             // columnHeaderKm
             // 
@@ -365,7 +409,7 @@
             this.groupBoxCars.Controls.Add(this.buttonAutoUpdate);
             this.groupBoxCars.Location = new System.Drawing.Point(396, 27);
             this.groupBoxCars.Name = "groupBoxCars";
-            this.groupBoxCars.Size = new System.Drawing.Size(376, 250);
+            this.groupBoxCars.Size = new System.Drawing.Size(376, 284);
             this.groupBoxCars.TabIndex = 19;
             this.groupBoxCars.TabStop = false;
             this.groupBoxCars.Text = "Masini";
@@ -383,6 +427,16 @@
             this.groupBoxClients.TabStop = false;
             this.groupBoxClients.Text = "Clienti";
             // 
+            // buttonClientDelete
+            // 
+            this.buttonClientDelete.Location = new System.Drawing.Point(265, 222);
+            this.buttonClientDelete.Name = "buttonClientDelete";
+            this.buttonClientDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonClientDelete.TabIndex = 12;
+            this.buttonClientDelete.Text = "Sterge";
+            this.buttonClientDelete.UseVisualStyleBackColor = true;
+            this.buttonClientDelete.Click += new System.EventHandler(this.buttonClientDelete_Click);
+            // 
             // groupBoxOrders
             // 
             this.groupBoxOrders.Controls.Add(this.buttonOrderUpdate);
@@ -396,34 +450,6 @@
             this.groupBoxOrders.TabStop = false;
             this.groupBoxOrders.Text = "Comenzi";
             // 
-            // richTextBoxOrderDescription
-            // 
-            this.richTextBoxOrderDescription.Location = new System.Drawing.Point(444, 19);
-            this.richTextBoxOrderDescription.MaxLength = 1024;
-            this.richTextBoxOrderDescription.Name = "richTextBoxOrderDescription";
-            this.richTextBoxOrderDescription.ReadOnly = true;
-            this.richTextBoxOrderDescription.Size = new System.Drawing.Size(278, 155);
-            this.richTextBoxOrderDescription.TabIndex = 19;
-            this.richTextBoxOrderDescription.Text = "";
-            this.richTextBoxOrderDescription.TextChanged += new System.EventHandler(this.richTextBoxOrderDescription_TextChanged);
-            // 
-            // showAllMecanicsToolStripMenuItem
-            // 
-            this.showAllMecanicsToolStripMenuItem.Name = "showAllMecanicsToolStripMenuItem";
-            this.showAllMecanicsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showAllMecanicsToolStripMenuItem.Text = "Show all mecanics";
-            this.showAllMecanicsToolStripMenuItem.Click += new System.EventHandler(this.showAllMecanicsToolStripMenuItem_Click);
-            // 
-            // buttonClientDelete
-            // 
-            this.buttonClientDelete.Location = new System.Drawing.Point(265, 222);
-            this.buttonClientDelete.Name = "buttonClientDelete";
-            this.buttonClientDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonClientDelete.TabIndex = 12;
-            this.buttonClientDelete.Text = "Sterge";
-            this.buttonClientDelete.UseVisualStyleBackColor = true;
-            this.buttonClientDelete.Click += new System.EventHandler(this.buttonClientDelete_Click);
-            // 
             // buttonOrderUpdate
             // 
             this.buttonOrderUpdate.Location = new System.Drawing.Point(128, 179);
@@ -434,39 +460,16 @@
             this.buttonOrderUpdate.UseVisualStyleBackColor = true;
             this.buttonOrderUpdate.Click += new System.EventHandler(this.buttonOrderUpdate_Click);
             // 
-            // columnHeaderSerieSasiu
+            // richTextBoxOrderDescription
             // 
-            this.columnHeaderSerieSasiu.Text = "SerieSasiu";
-            this.columnHeaderSerieSasiu.Width = 75;
-            // 
-            // columnHeaderCodSasiu
-            // 
-            this.columnHeaderCodSasiu.Text = "Cod sasiu";
-            // 
-            // columnHeaderDenumireAuto
-            // 
-            this.columnHeaderDenumireAuto.Text = "Denumire";
-            this.columnHeaderDenumireAuto.Width = 100;
-            // 
-            // columnHeaderClientAdress
-            // 
-            this.columnHeaderClientAdress.DisplayIndex = 4;
-            this.columnHeaderClientAdress.Text = "Adresa";
-            this.columnHeaderClientAdress.Width = 100;
-            // 
-            // columnHeaderClientLocalitate
-            // 
-            this.columnHeaderClientLocalitate.DisplayIndex = 5;
-            this.columnHeaderClientLocalitate.Text = "Localitate";
-            // 
-            // columnHeaderClientJudet
-            // 
-            this.columnHeaderClientJudet.DisplayIndex = 6;
-            this.columnHeaderClientJudet.Text = "Judet";
-            // 
-            // columnHeaderClientEmail
-            // 
-            this.columnHeaderClientEmail.Text = "Email";
+            this.richTextBoxOrderDescription.Location = new System.Drawing.Point(444, 19);
+            this.richTextBoxOrderDescription.MaxLength = 1024;
+            this.richTextBoxOrderDescription.Name = "richTextBoxOrderDescription";
+            this.richTextBoxOrderDescription.ReadOnly = true;
+            this.richTextBoxOrderDescription.Size = new System.Drawing.Size(278, 155);
+            this.richTextBoxOrderDescription.TabIndex = 19;
+            this.richTextBoxOrderDescription.Text = "";
+            this.richTextBoxOrderDescription.TextChanged += new System.EventHandler(this.richTextBoxOrderDescription_TextChanged);
             // 
             // CarServiceForm
             // 

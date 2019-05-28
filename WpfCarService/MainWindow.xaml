@@ -6,7 +6,15 @@
         xmlns:local="clr-namespace:WpfCarService"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+    <Grid RenderTransformOrigin="0.461,0.353">
+        <Button x:Name="Add_client" Content="Add client" HorizontalAlignment="Left" Margin="518,334,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.4,2.5" Click="Button_Click"/>
+        <TextBox x:Name="Nume" HorizontalAlignment="Left" Height="23" Margin="257,141,0,0" TextWrapping="Wrap" Text="Nume" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Prenume" HorizontalAlignment="Left" Height="23" Margin="257,169,0,0" TextWrapping="Wrap" Text="Prenume" VerticalAlignment="Top" Width="120" />
+        <TextBox x:Name="Localitate" HorizontalAlignment="Left" Height="23" Margin="257,197,0,0" TextWrapping="Wrap" Text="Localitate" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="257,225,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="257,253,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="23" Margin="257,281,0,0" TextWrapping="Wrap" Text="Adresa" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="County" HorizontalAlignment="Left" Height="23" Margin="257,309,0,0" TextWrapping="Wrap" Text="Judet" VerticalAlignment="Top" Width="120"/>
+
     </Grid>
 </Window>

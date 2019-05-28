@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCFHost", "WCFHost\WCFHost.csproj", "{D8E15369-4A7E-4A38-8BD7-18AE40872414}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCarService", "WpfCarService\WpfCarService.csproj", "{EE4AA742-AC52-493F-B0B3-9C812DFF86BD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4A38B2DE-A3BF-4F42-A4D1-089C6E34B2C1} = {4A38B2DE-A3BF-4F42-A4D1-089C6E34B2C1}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

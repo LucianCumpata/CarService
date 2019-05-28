@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/CarService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/CarService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Client">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adresa" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Auto" nillable="true" type="tns:ArrayOfAuto" />
+          <xs:element minOccurs="0" name="Comanda" nillable="true" type="tns:ArrayOfComanda" />
+          <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Judet" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Localitate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prenume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telefon" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Client" nillable="true" type="tns:Client" />
+  <xs:complexType name="EntityBase">
+    <xs:sequence />
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="EntityBase" nillable="true" type="tns:EntityBase" />
+  <xs:complexType name="ArrayOfAuto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Auto" nillable="true" type="tns:Auto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuto" nillable="true" type="tns:ArrayOfAuto" />
+  <xs:complexType name="Auto">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+          <xs:element minOccurs="0" name="ClientId" type="xs:int" />
+          <xs:element minOccurs="0" name="Comanda" nillable="true" type="tns:ArrayOfComanda" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="NumarAuto" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Sasiu" nillable="true" type="tns:Sasiu" />
+          <xs:element minOccurs="0" name="SasiuId" type="xs:int" />
+          <xs:element minOccurs="0" name="SerieSasiu" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Auto" nillable="true" type="tns:Auto" />
+  <xs:complexType name="ArrayOfComanda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Comanda" nillable="true" type="tns:Comanda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfComanda" nillable="true" type="tns:ArrayOfComanda" />
+  <xs:complexType name="Comanda">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Auto" nillable="true" type="tns:Auto" />
+          <xs:element minOccurs="0" name="AutoId" type="xs:int" />
+          <xs:element minOccurs="0" name="Client" nillable="true" type="tns:Client" />
+          <xs:element minOccurs="0" name="ClientId" type="xs:int" />
+          <xs:element minOccurs="0" name="DataFinalizare" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataProgramare" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DataSystem" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetaliuComanda" nillable="true" type="tns:ArrayOfDetaliuComanda" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="KmBord" type="xs:int" />
+          <xs:element minOccurs="0" name="StareComanda" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ValoarePiese" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Comanda" nillable="true" type="tns:Comanda" />
+  <xs:complexType name="ArrayOfDetaliuComanda">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DetaliuComanda" nillable="true" type="tns:DetaliuComanda" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDetaliuComanda" nillable="true" type="tns:ArrayOfDetaliuComanda" />
+  <xs:complexType name="DetaliuComanda">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comanda" nillable="true" type="tns:Comanda" />
+          <xs:element minOccurs="0" name="ComandaId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Imagine" nillable="true" type="tns:ArrayOfImagine" />
+          <xs:element minOccurs="0" name="Material" nillable="true" type="tns:Material" />
+          <xs:element minOccurs="0" name="MaterialId" type="xs:int" />
+          <xs:element minOccurs="0" name="Mecanic" nillable="true" type="tns:Mecanic" />
+          <xs:element minOccurs="0" name="MecanicId" type="xs:int" />
+          <xs:element minOccurs="0" name="Operatie" nillable="true" type="tns:Operatie" />
+          <xs:element minOccurs="0" name="OperatieId" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DetaliuComanda" nillable="true" type="tns:DetaliuComanda" />
+  <xs:complexType name="ArrayOfImagine">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Imagine" nillable="true" type="tns:Imagine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfImagine" nillable="true" type="tns:ArrayOfImagine" />
+  <xs:complexType name="Imagine">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Descriere" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetaliuComanda" nillable="true" type="tns:DetaliuComanda" />
+          <xs:element minOccurs="0" name="DetaliuComandaId" type="xs:int" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Photo" nillable="true" type="xs:base64Binary" />
+          <xs:element minOccurs="0" name="Titlu" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Imagine" nillable="true" type="tns:Imagine" />
+  <xs:complexType name="Material">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Cantitate" type="xs:decimal" />
+          <xs:element minOccurs="0" name="DataAprovizionare" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Denumire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetaliuComanda" nillable="true" type="tns:ArrayOfDetaliuComanda" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Pret" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Material" nillable="true" type="tns:Material" />
+  <xs:complexType name="Mecanic">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DetaliuComanda" nillable="true" type="tns:ArrayOfDetaliuComanda" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Nume" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Prenume" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Mecanic" nillable="true" type="tns:Mecanic" />
+  <xs:complexType name="Operatie">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Denumire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DetaliuComanda" nillable="true" type="tns:ArrayOfDetaliuComanda" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="TimpExecutie" type="xs:decimal" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Operatie" nillable="true" type="tns:Operatie" />
+  <xs:complexType name="Sasiu">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:EntityBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Auto" nillable="true" type="tns:ArrayOfAuto" />
+          <xs:element minOccurs="0" name="CodSasiu" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Denumire" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Sasiu" nillable="true" type="tns:Sasiu" />
+</xs:schema>

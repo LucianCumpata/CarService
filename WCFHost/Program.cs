@@ -15,7 +15,7 @@ namespace WCFHost
         {
             Console.WriteLine("Lansare server WCF...");
             ServiceHost host = new ServiceHost(typeof(CarService), 
-                new Uri("http://localhost:8000/CarService"));
+                new Uri("http://localhost:8000/WCFService/"));
 
             foreach (ServiceEndpoint se in host.Description.Endpoints)
                 Console.WriteLine("A (adress): {0} \nB (binding): {1} \nC (Contract): {2} \n",

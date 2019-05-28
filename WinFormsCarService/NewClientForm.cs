@@ -89,5 +89,10 @@ namespace WinFormsCarService
         {
 
         }
+
+        private void NewClientForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

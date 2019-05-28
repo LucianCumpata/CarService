@@ -215,6 +215,7 @@
             this.Controls.Add(this.groupBoxClient);
             this.Name = "NewClientForm";
             this.Text = "Add new client";
+            this.Load += new System.EventHandler(this.NewClientForm_Load);
             this.groupBoxClient.ResumeLayout(false);
             this.groupBoxClient.PerformLayout();
             this.ResumeLayout(false);

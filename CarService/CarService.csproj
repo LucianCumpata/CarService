@@ -62,6 +62,7 @@
     <Compile Include="Comanda.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>
+    <Compile Include="CompletedPartialClasses.cs" />
     <Compile Include="DetaliuComanda.cs">
       <DependentUpon>ModelCarService.tt</DependentUpon>
     </Compile>

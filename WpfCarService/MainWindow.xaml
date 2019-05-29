@@ -7,14 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.461,0.353">
-        <Button x:Name="Add_client" Content="Add client" HorizontalAlignment="Left" Margin="518,334,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.4,2.5" Click="Button_Click"/>
-        <TextBox x:Name="Nume" HorizontalAlignment="Left" Height="23" Margin="257,141,0,0" TextWrapping="Wrap" Text="Nume" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="Prenume" HorizontalAlignment="Left" Height="23" Margin="257,169,0,0" TextWrapping="Wrap" Text="Prenume" VerticalAlignment="Top" Width="120" />
-        <TextBox x:Name="Localitate" HorizontalAlignment="Left" Height="23" Margin="257,197,0,0" TextWrapping="Wrap" Text="Localitate" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="257,225,0,0" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="257,253,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="23" Margin="257,281,0,0" TextWrapping="Wrap" Text="Adresa" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="County" HorizontalAlignment="Left" Height="23" Margin="257,309,0,0" TextWrapping="Wrap" Text="Judet" VerticalAlignment="Top" Width="120"/>
+        <TabControl HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            <TabItem Header="Clients">
+                <Grid Background="#FFE5E5E5">
+                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="256,327,0,0" VerticalAlignment="Top" Width="112"/>
+                    <Button x:Name="Add_client" Content="Add client" HorizontalAlignment="Left" Margin="510,228,0,-137" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.4,2.5" Click="Button_Click"/>
+                    <TextBox x:Name="Nume" HorizontalAlignment="Left" Height="23" Margin="390,35,0,0" TextWrapping="Wrap" Text="Nume" VerticalAlignment="Top" Width="120" />
+                    <TextBox x:Name="Prenume" HorizontalAlignment="Left" Height="23" Margin="390,63,0,0" TextWrapping="Wrap" Text="Prenume" VerticalAlignment="Top" Width="120" />
+                    <TextBox x:Name="Localitate" HorizontalAlignment="Left" Height="23" Margin="390,91,0,-3" TextWrapping="Wrap" Text="Localitate" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="390,119,0,-31" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="390,147,0,-59" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="23" Margin="390,175,0,-87" TextWrapping="Wrap" Text="Adresa" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="County" HorizontalAlignment="Left" Height="23" Margin="390,203,0,-115" TextWrapping="Wrap" Text="Judet" VerticalAlignment="Top" Width="120"/>
+                    <DataGrid x:Name="ClientList" ItemsSource="{Binding ''}"     HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="350"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Mecanics">
+                <Grid Background="#FFE5E5E5" Margin="0,1,0,-1">
+                    <Button x:Name="BtnViewAllMecanics"    Content="View all mecanics" HorizontalAlignment="Left" Margin="109,242,0,0" VerticalAlignment="Top" Width="122" Click="BtnViewAllMecanics_Click"/>
+                    <DataGrid x:Name="MecanicsList" ItemsSource="{Binding ''}"  HorizontalAlignment="Left" Height="100" Margin="67,16,0,0" VerticalAlignment="Top" Width="408" SelectionChanged="MecanicsList_SelectionChanged"/>
+                    <Button x:Name="BtnAddNewMecanic" Content="Add new mecanic" HorizontalAlignment="Left" Margin="631,324,0,0" VerticalAlignment="Top" Width="120" Click="BtnAddNewMecanic_Click"/>
+                    <Label Content="Nume" HorizontalAlignment="Left" Margin="569,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,0.769"/>
+                    <Label Content="Prenume" HorizontalAlignment="Left" Margin="569,296,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="TxtBxNumeMecanic" HorizontalAlignment="Left" Height="23" Margin="631,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="TxtBxPrenumeMecanic" HorizontalAlignment="Left" Height="23" Margin="631,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

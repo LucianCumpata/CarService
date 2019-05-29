@@ -11,11 +11,11 @@
 namespace CarService
 {
     using System.Runtime.Serialization;
-    
-    
+
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="EntityBase", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "EntityBase", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CarService.Auto))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CarService.Comanda))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CarService.DetaliuComanda))]
@@ -27,9 +27,9 @@ namespace CarService
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(CarService.Client))]
     public partial class EntityBase : object, System.Runtime.Serialization.IExtensibleDataObject
     {
-        
+
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
+
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData
         {
             get
@@ -42,29 +42,29 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Auto", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Auto", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Auto : CarService.EntityBase
     {
-        
+
         private CarService.Client ClientField;
-        
+
         private int ClientIdField;
-        
+
         private CarService.Comanda[] ComandaField;
-        
+
         private int IdField;
-        
+
         private string NumarAutoField;
-        
+
         private CarService.Sasiu SasiuField;
-        
+
         private int SasiuIdField;
-        
+
         private string SerieSasiuField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Client Client
         {
@@ -77,7 +77,7 @@ namespace CarService
                 this.ClientField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ClientId
         {
@@ -90,7 +90,7 @@ namespace CarService
                 this.ClientIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Comanda[] Comanda
         {
@@ -103,7 +103,7 @@ namespace CarService
                 this.ComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -116,7 +116,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string NumarAuto
         {
@@ -129,7 +129,7 @@ namespace CarService
                 this.NumarAutoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Sasiu Sasiu
         {
@@ -142,7 +142,7 @@ namespace CarService
                 this.SasiuField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int SasiuId
         {
@@ -155,7 +155,7 @@ namespace CarService
                 this.SasiuIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string SerieSasiu
         {
@@ -169,39 +169,39 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Comanda", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Comanda", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Comanda : CarService.EntityBase
     {
-        
+
         private CarService.Auto AutoField;
-        
+
         private int AutoIdField;
-        
+
         private CarService.Client ClientField;
-        
+
         private int ClientIdField;
-        
+
         private System.DateTime DataFinalizareField;
-        
+
         private System.DateTime DataProgramareField;
-        
+
         private System.DateTime DataSystemField;
-        
+
         private string DescriereField;
-        
+
         private CarService.DetaliuComanda[] DetaliuComandaField;
-        
+
         private int IdField;
-        
+
         private int KmBordField;
-        
+
         private string StareComandaField;
-        
+
         private decimal ValoarePieseField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Auto Auto
         {
@@ -214,7 +214,7 @@ namespace CarService
                 this.AutoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int AutoId
         {
@@ -227,7 +227,7 @@ namespace CarService
                 this.AutoIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Client Client
         {
@@ -240,7 +240,7 @@ namespace CarService
                 this.ClientField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ClientId
         {
@@ -253,7 +253,7 @@ namespace CarService
                 this.ClientIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime DataFinalizare
         {
@@ -266,7 +266,7 @@ namespace CarService
                 this.DataFinalizareField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime DataProgramare
         {
@@ -279,7 +279,7 @@ namespace CarService
                 this.DataProgramareField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime DataSystem
         {
@@ -292,7 +292,7 @@ namespace CarService
                 this.DataSystemField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Descriere
         {
@@ -305,7 +305,7 @@ namespace CarService
                 this.DescriereField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.DetaliuComanda[] DetaliuComanda
         {
@@ -318,7 +318,7 @@ namespace CarService
                 this.DetaliuComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -331,7 +331,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int KmBord
         {
@@ -344,7 +344,7 @@ namespace CarService
                 this.KmBordField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string StareComanda
         {
@@ -357,7 +357,7 @@ namespace CarService
                 this.StareComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal ValoarePiese
         {
@@ -371,33 +371,33 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DetaliuComanda", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "DetaliuComanda", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class DetaliuComanda : CarService.EntityBase
     {
-        
+
         private CarService.Comanda ComandaField;
-        
+
         private int ComandaIdField;
-        
+
         private int IdField;
-        
+
         private CarService.Imagine[] ImagineField;
-        
+
         private CarService.Material MaterialField;
-        
+
         private int MaterialIdField;
-        
+
         private CarService.Mecanic MecanicField;
-        
+
         private int MecanicIdField;
-        
+
         private CarService.Operatie OperatieField;
-        
+
         private int OperatieIdField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Comanda Comanda
         {
@@ -410,7 +410,7 @@ namespace CarService
                 this.ComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int ComandaId
         {
@@ -423,7 +423,7 @@ namespace CarService
                 this.ComandaIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -436,7 +436,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Imagine[] Imagine
         {
@@ -449,7 +449,7 @@ namespace CarService
                 this.ImagineField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Material Material
         {
@@ -462,7 +462,7 @@ namespace CarService
                 this.MaterialField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int MaterialId
         {
@@ -475,7 +475,7 @@ namespace CarService
                 this.MaterialIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Mecanic Mecanic
         {
@@ -488,7 +488,7 @@ namespace CarService
                 this.MecanicField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int MecanicId
         {
@@ -501,7 +501,7 @@ namespace CarService
                 this.MecanicIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Operatie Operatie
         {
@@ -514,7 +514,7 @@ namespace CarService
                 this.OperatieField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int OperatieId
         {
@@ -528,27 +528,27 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Imagine", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Imagine", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Imagine : CarService.EntityBase
     {
-        
+
         private System.DateTime DataField;
-        
+
         private string DescriereField;
-        
+
         private CarService.DetaliuComanda DetaliuComandaField;
-        
+
         private int DetaliuComandaIdField;
-        
+
         private int IdField;
-        
+
         private byte[] PhotoField;
-        
+
         private string TitluField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime Data
         {
@@ -561,7 +561,7 @@ namespace CarService
                 this.DataField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Descriere
         {
@@ -574,7 +574,7 @@ namespace CarService
                 this.DescriereField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.DetaliuComanda DetaliuComanda
         {
@@ -587,7 +587,7 @@ namespace CarService
                 this.DetaliuComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int DetaliuComandaId
         {
@@ -600,7 +600,7 @@ namespace CarService
                 this.DetaliuComandaIdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -613,7 +613,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public byte[] Photo
         {
@@ -626,7 +626,7 @@ namespace CarService
                 this.PhotoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Titlu
         {
@@ -640,25 +640,25 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Material", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Material", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Material : CarService.EntityBase
     {
-        
+
         private decimal CantitateField;
-        
+
         private System.DateTime DataAprovizionareField;
-        
+
         private string DenumireField;
-        
+
         private CarService.DetaliuComanda[] DetaliuComandaField;
-        
+
         private int IdField;
-        
+
         private decimal PretField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal Cantitate
         {
@@ -671,7 +671,7 @@ namespace CarService
                 this.CantitateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public System.DateTime DataAprovizionare
         {
@@ -684,7 +684,7 @@ namespace CarService
                 this.DataAprovizionareField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Denumire
         {
@@ -697,7 +697,7 @@ namespace CarService
                 this.DenumireField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.DetaliuComanda[] DetaliuComanda
         {
@@ -710,7 +710,7 @@ namespace CarService
                 this.DetaliuComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -723,7 +723,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal Pret
         {
@@ -737,21 +737,21 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Mecanic", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Mecanic", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Mecanic : CarService.EntityBase
     {
-        
+
         private CarService.DetaliuComanda[] DetaliuComandaField;
-        
+
         private int IdField;
-        
+
         private string NumeField;
-        
+
         private string PrenumeField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.DetaliuComanda[] DetaliuComanda
         {
@@ -764,7 +764,7 @@ namespace CarService
                 this.DetaliuComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -777,7 +777,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Nume
         {
@@ -790,7 +790,7 @@ namespace CarService
                 this.NumeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Prenume
         {
@@ -804,21 +804,21 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Operatie", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Operatie", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Operatie : CarService.EntityBase
     {
-        
+
         private string DenumireField;
-        
+
         private CarService.DetaliuComanda[] DetaliuComandaField;
-        
+
         private int IdField;
-        
+
         private decimal TimpExecutieField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Denumire
         {
@@ -831,7 +831,7 @@ namespace CarService
                 this.DenumireField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.DetaliuComanda[] DetaliuComanda
         {
@@ -844,7 +844,7 @@ namespace CarService
                 this.DetaliuComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -857,7 +857,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public decimal TimpExecutie
         {
@@ -871,21 +871,21 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Sasiu", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Sasiu", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Sasiu : CarService.EntityBase
     {
-        
+
         private CarService.Auto[] AutoField;
-        
+
         private string CodSasiuField;
-        
+
         private string DenumireField;
-        
+
         private int IdField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Auto[] Auto
         {
@@ -898,7 +898,7 @@ namespace CarService
                 this.AutoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string CodSasiu
         {
@@ -911,7 +911,7 @@ namespace CarService
                 this.CodSasiuField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Denumire
         {
@@ -924,7 +924,7 @@ namespace CarService
                 this.DenumireField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -938,33 +938,33 @@ namespace CarService
             }
         }
     }
-    
+
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Client", Namespace="http://schemas.datacontract.org/2004/07/CarService", IsReference=true)]
+    [System.Runtime.Serialization.DataContractAttribute(Name = "Client", Namespace = "http://schemas.datacontract.org/2004/07/CarService", IsReference = true)]
     public partial class Client : CarService.EntityBase
     {
-        
+
         private string AdresaField;
-        
+
         private CarService.Auto[] AutoField;
-        
+
         private CarService.Comanda[] ComandaField;
-        
+
         private string EmailField;
-        
+
         private int IdField;
-        
+
         private string JudetField;
-        
+
         private string LocalitateField;
-        
+
         private string NumeField;
-        
+
         private string PrenumeField;
-        
+
         private string TelefonField;
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Adresa
         {
@@ -977,7 +977,7 @@ namespace CarService
                 this.AdresaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Auto[] Auto
         {
@@ -990,7 +990,7 @@ namespace CarService
                 this.AutoField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public CarService.Comanda[] Comanda
         {
@@ -1003,7 +1003,7 @@ namespace CarService
                 this.ComandaField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Email
         {
@@ -1016,7 +1016,7 @@ namespace CarService
                 this.EmailField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public int Id
         {
@@ -1029,7 +1029,7 @@ namespace CarService
                 this.IdField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Judet
         {
@@ -1042,7 +1042,7 @@ namespace CarService
                 this.JudetField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Localitate
         {
@@ -1055,7 +1055,7 @@ namespace CarService
                 this.LocalitateField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Nume
         {
@@ -1068,7 +1068,7 @@ namespace CarService
                 this.NumeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Prenume
         {
@@ -1081,7 +1081,7 @@ namespace CarService
                 this.PrenumeField = value;
             }
         }
-        
+
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Telefon
         {
@@ -1099,15 +1099,213 @@ namespace CarService
 
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-[System.ServiceModel.ServiceContractAttribute(ConfigurationName="ICarService")]
+[System.ServiceModel.ServiceContractAttribute(ConfigurationName = "ICarService")]
 public interface ICarService
 {
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceClients/AddClient", ReplyAction="http://tempuri.org/InterfaceClients/AddClientResponse")]
-    bool AddClient(CarService.Client client);
-    
-    [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/InterfaceClients/AddClient", ReplyAction="http://tempuri.org/InterfaceClients/AddClientResponse")]
-    System.Threading.Tasks.Task<bool> AddClientAsync(CarService.Client client);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/AddClient", ReplyAction = "http://tempuri.org/InterfaceClients/AddClientResponse")]
+    void AddClient(CarService.Client client);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/AddClient", ReplyAction = "http://tempuri.org/InterfaceClients/AddClientResponse")]
+    System.Threading.Tasks.Task AddClientAsync(CarService.Client client);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/ListAllClients", ReplyAction = "http://tempuri.org/InterfaceClients/ListAllClientsResponse")]
+    CarService.Client[] ListAllClients();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/ListAllClients", ReplyAction = "http://tempuri.org/InterfaceClients/ListAllClientsResponse")]
+    System.Threading.Tasks.Task<CarService.Client[]> ListAllClientsAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/DeleteClient", ReplyAction = "http://tempuri.org/InterfaceClients/DeleteClientResponse")]
+    void DeleteClient(CarService.Client c);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/DeleteClient", ReplyAction = "http://tempuri.org/InterfaceClients/DeleteClientResponse")]
+    System.Threading.Tasks.Task DeleteClientAsync(CarService.Client c);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/GetClientById", ReplyAction = "http://tempuri.org/InterfaceClients/GetClientByIdResponse")]
+    CarService.Client GetClientById(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/GetClientById", ReplyAction = "http://tempuri.org/InterfaceClients/GetClientByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Client> GetClientByIdAsync(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/ListClientsByName", ReplyAction = "http://tempuri.org/InterfaceClients/ListClientsByNameResponse")]
+    CarService.Client[] ListClientsByName(string name);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/ListClientsByName", ReplyAction = "http://tempuri.org/InterfaceClients/ListClientsByNameResponse")]
+    System.Threading.Tasks.Task<CarService.Client[]> ListClientsByNameAsync(string name);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/UpdateClient", ReplyAction = "http://tempuri.org/InterfaceClients/UpdateClientResponse")]
+    void UpdateClient(CarService.Client c);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceClients/UpdateClient", ReplyAction = "http://tempuri.org/InterfaceClients/UpdateClientResponse")]
+    System.Threading.Tasks.Task UpdateClientAsync(CarService.Client c);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/AddMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/AddMecanicResponse")]
+    void AddMecanic(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/AddMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/AddMecanicResponse")]
+    System.Threading.Tasks.Task AddMecanicAsync(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/DeleteMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/DeleteMecanicResponse")]
+    void DeleteMecanic(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/DeleteMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/DeleteMecanicResponse")]
+    System.Threading.Tasks.Task DeleteMecanicAsync(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/GetMecanicById", ReplyAction = "http://tempuri.org/InterfaceMecanics/GetMecanicByIdResponse")]
+    CarService.Mecanic GetMecanicById(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/GetMecanicById", ReplyAction = "http://tempuri.org/InterfaceMecanics/GetMecanicByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Mecanic> GetMecanicByIdAsync(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/ListAllMecanics", ReplyAction = "http://tempuri.org/InterfaceMecanics/ListAllMecanicsResponse")]
+    CarService.Mecanic[] ListAllMecanics();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/ListAllMecanics", ReplyAction = "http://tempuri.org/InterfaceMecanics/ListAllMecanicsResponse")]
+    System.Threading.Tasks.Task<CarService.Mecanic[]> ListAllMecanicsAsync();
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/UpdateMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/UpdateMecanicResponse")]
+    void UpdateMecanic(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMecanics/UpdateMecanic", ReplyAction = "http://tempuri.org/InterfaceMecanics/UpdateMecanicResponse")]
+    System.Threading.Tasks.Task UpdateMecanicAsync(CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/AddMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/AddMaterialResponse")]
+    void AddMaterial(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/AddMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/AddMaterialResponse")]
+    System.Threading.Tasks.Task AddMaterialAsync(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/DeleteMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/DeleteMaterialResponse")]
+    void DeleteMaterial(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/DeleteMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/DeleteMaterialResponse")]
+    System.Threading.Tasks.Task DeleteMaterialAsync(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/GetMaterialById", ReplyAction = "http://tempuri.org/InterfaceMaterial/GetMaterialByIdResponse")]
+    CarService.Material GetMaterialById(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/GetMaterialById", ReplyAction = "http://tempuri.org/InterfaceMaterial/GetMaterialByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Material> GetMaterialByIdAsync(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/UpdateMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/UpdateMaterialResponse")]
+    void UpdateMaterial(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceMaterial/UpdateMaterial", ReplyAction = "http://tempuri.org/InterfaceMaterial/UpdateMaterialResponse")]
+    System.Threading.Tasks.Task UpdateMaterialAsync(CarService.Material m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/AddOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/AddOperatieResponse")]
+    void AddOperatie(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/AddOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/AddOperatieResponse")]
+    System.Threading.Tasks.Task AddOperatieAsync(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/DeleteOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/DeleteOperatieResponse")]
+    void DeleteOperatie(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/DeleteOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/DeleteOperatieResponse")]
+    System.Threading.Tasks.Task DeleteOperatieAsync(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/GetOperatieById", ReplyAction = "http://tempuri.org/InterfaceOperatie/GetOperatieByIdResponse")]
+    CarService.Operatie GetOperatieById(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/GetOperatieById", ReplyAction = "http://tempuri.org/InterfaceOperatie/GetOperatieByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Operatie> GetOperatieByIdAsync(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/UpdateOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/UpdateOperatieResponse")]
+    void UpdateOperatie(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceOperatie/UpdateOperatie", ReplyAction = "http://tempuri.org/InterfaceOperatie/UpdateOperatieResponse")]
+    System.Threading.Tasks.Task UpdateOperatieAsync(CarService.Operatie o);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/AddAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/AddAutoResponse")]
+    void AddAuto(CarService.Auto auto, CarService.Client client, CarService.Sasiu sasiu);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/AddAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/AddAutoResponse")]
+    System.Threading.Tasks.Task AddAutoAsync(CarService.Auto auto, CarService.Client client, CarService.Sasiu sasiu);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/ListAutosByClient", ReplyAction = "http://tempuri.org/InterfaceAuto/ListAutosByClientResponse")]
+    CarService.Auto[] ListAutosByClient(CarService.Client client);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/ListAutosByClient", ReplyAction = "http://tempuri.org/InterfaceAuto/ListAutosByClientResponse")]
+    System.Threading.Tasks.Task<CarService.Auto[]> ListAutosByClientAsync(CarService.Client client);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/DeleteAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/DeleteAutoResponse")]
+    void DeleteAuto(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/DeleteAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/DeleteAutoResponse")]
+    System.Threading.Tasks.Task DeleteAutoAsync(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/GetAutoById", ReplyAction = "http://tempuri.org/InterfaceAuto/GetAutoByIdResponse")]
+    CarService.Auto GetAutoById(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/GetAutoById", ReplyAction = "http://tempuri.org/InterfaceAuto/GetAutoByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Auto> GetAutoByIdAsync(int Id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/UpdateAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/UpdateAutoResponse")]
+    void UpdateAuto(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceAuto/UpdateAuto", ReplyAction = "http://tempuri.org/InterfaceAuto/UpdateAutoResponse")]
+    System.Threading.Tasks.Task UpdateAutoAsync(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/AddComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/AddComandaResponse")]
+    void AddComanda(CarService.Comanda comanda, CarService.Client client, CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/AddComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/AddComandaResponse")]
+    System.Threading.Tasks.Task AddComandaAsync(CarService.Comanda comanda, CarService.Client client, CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/DeleteComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/DeleteComandaResponse")]
+    void DeleteComanda(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/DeleteComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/DeleteComandaResponse")]
+    System.Threading.Tasks.Task DeleteComandaAsync(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/GetComandaById", ReplyAction = "http://tempuri.org/InterfaceComanda/GetComandaByIdResponse")]
+    CarService.Comanda GetComandaById(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/GetComandaById", ReplyAction = "http://tempuri.org/InterfaceComanda/GetComandaByIdResponse")]
+    System.Threading.Tasks.Task<CarService.Comanda> GetComandaByIdAsync(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/ListOrdersByAuto", ReplyAction = "http://tempuri.org/InterfaceComanda/ListOrdersByAutoResponse")]
+    CarService.Comanda[] ListOrdersByAuto(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/ListOrdersByAuto", ReplyAction = "http://tempuri.org/InterfaceComanda/ListOrdersByAutoResponse")]
+    System.Threading.Tasks.Task<CarService.Comanda[]> ListOrdersByAutoAsync(CarService.Auto auto);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/UpdateComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/UpdateComandaResponse")]
+    void UpdateComanda(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceComanda/UpdateComanda", ReplyAction = "http://tempuri.org/InterfaceComanda/UpdateComandaResponse")]
+    System.Threading.Tasks.Task UpdateComandaAsync(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/AddDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/AddDetaliuComandaResponse")]
+    void AddDetaliuComanda(CarService.DetaliuComanda d, CarService.Comanda c, CarService.Material ma, CarService.Operatie o, CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/AddDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/AddDetaliuComandaResponse")]
+    System.Threading.Tasks.Task AddDetaliuComandaAsync(CarService.DetaliuComanda d, CarService.Comanda c, CarService.Material ma, CarService.Operatie o, CarService.Mecanic m);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/DeleteDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/DeleteDetaliuComandaResponse")]
+    void DeleteDetaliuComanda(CarService.DetaliuComanda detaliu);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/DeleteDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/DeleteDetaliuComandaResponse")]
+    System.Threading.Tasks.Task DeleteDetaliuComandaAsync(CarService.DetaliuComanda detaliu);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/GetDetaliuComandaById", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/GetDetaliuComandaByIdResponse")]
+    CarService.DetaliuComanda GetDetaliuComandaById(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/GetDetaliuComandaById", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/GetDetaliuComandaByIdResponse")]
+    System.Threading.Tasks.Task<CarService.DetaliuComanda> GetDetaliuComandaByIdAsync(int id);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/ListDetaliuComandaByComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/ListDetaliuComandaByComandaResponse")]
+    CarService.DetaliuComanda[] ListDetaliuComandaByComanda(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/ListDetaliuComandaByComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/ListDetaliuComandaByComandaResponse")]
+    System.Threading.Tasks.Task<CarService.DetaliuComanda[]> ListDetaliuComandaByComandaAsync(CarService.Comanda comanda);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/UpdateDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/UpdateDetaliuComandaResponse")]
+    void UpdateDetaliuComanda(CarService.DetaliuComanda detaliu);
+
+    [System.ServiceModel.OperationContractAttribute(Action = "http://tempuri.org/InterfaceDetaliuComanda/UpdateDetaliuComanda", ReplyAction = "http://tempuri.org/InterfaceDetaliuComanda/UpdateDetaliuComandaResponse")]
+    System.Threading.Tasks.Task UpdateDetaliuComandaAsync(CarService.DetaliuComanda detaliu);
 }
 
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1119,38 +1317,368 @@ public interface ICarServiceChannel : ICarService, System.ServiceModel.IClientCh
 [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
 public partial class CarServiceClient : System.ServiceModel.ClientBase<ICarService>, ICarService
 {
-    
+
     public CarServiceClient()
     {
     }
-    
-    public CarServiceClient(string endpointConfigurationName) : 
+
+    public CarServiceClient(string endpointConfigurationName) :
             base(endpointConfigurationName)
     {
     }
-    
-    public CarServiceClient(string endpointConfigurationName, string remoteAddress) : 
+
+    public CarServiceClient(string endpointConfigurationName, string remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public CarServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public CarServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) :
             base(endpointConfigurationName, remoteAddress)
     {
     }
-    
-    public CarServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+
+    public CarServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) :
             base(binding, remoteAddress)
     {
     }
-    
-    public bool AddClient(CarService.Client client)
+
+    public void AddClient(CarService.Client client)
     {
-        return base.Channel.AddClient(client);
+        base.Channel.AddClient(client);
     }
-    
-    public System.Threading.Tasks.Task<bool> AddClientAsync(CarService.Client client)
+
+    public System.Threading.Tasks.Task AddClientAsync(CarService.Client client)
     {
         return base.Channel.AddClientAsync(client);
+    }
+
+    public CarService.Client[] ListAllClients()
+    {
+        return base.Channel.ListAllClients();
+    }
+
+    public System.Threading.Tasks.Task<CarService.Client[]> ListAllClientsAsync()
+    {
+        return base.Channel.ListAllClientsAsync();
+    }
+
+    public void DeleteClient(CarService.Client c)
+    {
+        base.Channel.DeleteClient(c);
+    }
+
+    public System.Threading.Tasks.Task DeleteClientAsync(CarService.Client c)
+    {
+        return base.Channel.DeleteClientAsync(c);
+    }
+
+    public CarService.Client GetClientById(int id)
+    {
+        return base.Channel.GetClientById(id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Client> GetClientByIdAsync(int id)
+    {
+        return base.Channel.GetClientByIdAsync(id);
+    }
+
+    public CarService.Client[] ListClientsByName(string name)
+    {
+        return base.Channel.ListClientsByName(name);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Client[]> ListClientsByNameAsync(string name)
+    {
+        return base.Channel.ListClientsByNameAsync(name);
+    }
+
+    public void UpdateClient(CarService.Client c)
+    {
+        base.Channel.UpdateClient(c);
+    }
+
+    public System.Threading.Tasks.Task UpdateClientAsync(CarService.Client c)
+    {
+        return base.Channel.UpdateClientAsync(c);
+    }
+
+    public void AddMecanic(CarService.Mecanic m)
+    {
+        base.Channel.AddMecanic(m);
+    }
+
+    public System.Threading.Tasks.Task AddMecanicAsync(CarService.Mecanic m)
+    {
+        return base.Channel.AddMecanicAsync(m);
+    }
+
+    public void DeleteMecanic(CarService.Mecanic m)
+    {
+        base.Channel.DeleteMecanic(m);
+    }
+
+    public System.Threading.Tasks.Task DeleteMecanicAsync(CarService.Mecanic m)
+    {
+        return base.Channel.DeleteMecanicAsync(m);
+    }
+
+    public CarService.Mecanic GetMecanicById(int Id)
+    {
+        return base.Channel.GetMecanicById(Id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Mecanic> GetMecanicByIdAsync(int Id)
+    {
+        return base.Channel.GetMecanicByIdAsync(Id);
+    }
+
+    public CarService.Mecanic[] ListAllMecanics()
+    {
+        return base.Channel.ListAllMecanics();
+    }
+
+    public System.Threading.Tasks.Task<CarService.Mecanic[]> ListAllMecanicsAsync()
+    {
+        return base.Channel.ListAllMecanicsAsync();
+    }
+
+    public void UpdateMecanic(CarService.Mecanic m)
+    {
+        base.Channel.UpdateMecanic(m);
+    }
+
+    public System.Threading.Tasks.Task UpdateMecanicAsync(CarService.Mecanic m)
+    {
+        return base.Channel.UpdateMecanicAsync(m);
+    }
+
+    public void AddMaterial(CarService.Material m)
+    {
+        base.Channel.AddMaterial(m);
+    }
+
+    public System.Threading.Tasks.Task AddMaterialAsync(CarService.Material m)
+    {
+        return base.Channel.AddMaterialAsync(m);
+    }
+
+    public void DeleteMaterial(CarService.Material m)
+    {
+        base.Channel.DeleteMaterial(m);
+    }
+
+    public System.Threading.Tasks.Task DeleteMaterialAsync(CarService.Material m)
+    {
+        return base.Channel.DeleteMaterialAsync(m);
+    }
+
+    public CarService.Material GetMaterialById(int Id)
+    {
+        return base.Channel.GetMaterialById(Id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Material> GetMaterialByIdAsync(int Id)
+    {
+        return base.Channel.GetMaterialByIdAsync(Id);
+    }
+
+    public void UpdateMaterial(CarService.Material m)
+    {
+        base.Channel.UpdateMaterial(m);
+    }
+
+    public System.Threading.Tasks.Task UpdateMaterialAsync(CarService.Material m)
+    {
+        return base.Channel.UpdateMaterialAsync(m);
+    }
+
+    public void AddOperatie(CarService.Operatie o)
+    {
+        base.Channel.AddOperatie(o);
+    }
+
+    public System.Threading.Tasks.Task AddOperatieAsync(CarService.Operatie o)
+    {
+        return base.Channel.AddOperatieAsync(o);
+    }
+
+    public void DeleteOperatie(CarService.Operatie o)
+    {
+        base.Channel.DeleteOperatie(o);
+    }
+
+    public System.Threading.Tasks.Task DeleteOperatieAsync(CarService.Operatie o)
+    {
+        return base.Channel.DeleteOperatieAsync(o);
+    }
+
+    public CarService.Operatie GetOperatieById(int Id)
+    {
+        return base.Channel.GetOperatieById(Id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Operatie> GetOperatieByIdAsync(int Id)
+    {
+        return base.Channel.GetOperatieByIdAsync(Id);
+    }
+
+    public void UpdateOperatie(CarService.Operatie o)
+    {
+        base.Channel.UpdateOperatie(o);
+    }
+
+    public System.Threading.Tasks.Task UpdateOperatieAsync(CarService.Operatie o)
+    {
+        return base.Channel.UpdateOperatieAsync(o);
+    }
+
+    public void AddAuto(CarService.Auto auto, CarService.Client client, CarService.Sasiu sasiu)
+    {
+        base.Channel.AddAuto(auto, client, sasiu);
+    }
+
+    public System.Threading.Tasks.Task AddAutoAsync(CarService.Auto auto, CarService.Client client, CarService.Sasiu sasiu)
+    {
+        return base.Channel.AddAutoAsync(auto, client, sasiu);
+    }
+
+    public CarService.Auto[] ListAutosByClient(CarService.Client client)
+    {
+        return base.Channel.ListAutosByClient(client);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Auto[]> ListAutosByClientAsync(CarService.Client client)
+    {
+        return base.Channel.ListAutosByClientAsync(client);
+    }
+
+    public void DeleteAuto(CarService.Auto auto)
+    {
+        base.Channel.DeleteAuto(auto);
+    }
+
+    public System.Threading.Tasks.Task DeleteAutoAsync(CarService.Auto auto)
+    {
+        return base.Channel.DeleteAutoAsync(auto);
+    }
+
+    public CarService.Auto GetAutoById(int Id)
+    {
+        return base.Channel.GetAutoById(Id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Auto> GetAutoByIdAsync(int Id)
+    {
+        return base.Channel.GetAutoByIdAsync(Id);
+    }
+
+    public void UpdateAuto(CarService.Auto auto)
+    {
+        base.Channel.UpdateAuto(auto);
+    }
+
+    public System.Threading.Tasks.Task UpdateAutoAsync(CarService.Auto auto)
+    {
+        return base.Channel.UpdateAutoAsync(auto);
+    }
+
+    public void AddComanda(CarService.Comanda comanda, CarService.Client client, CarService.Auto auto)
+    {
+        base.Channel.AddComanda(comanda, client, auto);
+    }
+
+    public System.Threading.Tasks.Task AddComandaAsync(CarService.Comanda comanda, CarService.Client client, CarService.Auto auto)
+    {
+        return base.Channel.AddComandaAsync(comanda, client, auto);
+    }
+
+    public void DeleteComanda(CarService.Comanda comanda)
+    {
+        base.Channel.DeleteComanda(comanda);
+    }
+
+    public System.Threading.Tasks.Task DeleteComandaAsync(CarService.Comanda comanda)
+    {
+        return base.Channel.DeleteComandaAsync(comanda);
+    }
+
+    public CarService.Comanda GetComandaById(int id)
+    {
+        return base.Channel.GetComandaById(id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Comanda> GetComandaByIdAsync(int id)
+    {
+        return base.Channel.GetComandaByIdAsync(id);
+    }
+
+    public CarService.Comanda[] ListOrdersByAuto(CarService.Auto auto)
+    {
+        return base.Channel.ListOrdersByAuto(auto);
+    }
+
+    public System.Threading.Tasks.Task<CarService.Comanda[]> ListOrdersByAutoAsync(CarService.Auto auto)
+    {
+        return base.Channel.ListOrdersByAutoAsync(auto);
+    }
+
+    public void UpdateComanda(CarService.Comanda comanda)
+    {
+        base.Channel.UpdateComanda(comanda);
+    }
+
+    public System.Threading.Tasks.Task UpdateComandaAsync(CarService.Comanda comanda)
+    {
+        return base.Channel.UpdateComandaAsync(comanda);
+    }
+
+    public void AddDetaliuComanda(CarService.DetaliuComanda d, CarService.Comanda c, CarService.Material ma, CarService.Operatie o, CarService.Mecanic m)
+    {
+        base.Channel.AddDetaliuComanda(d, c, ma, o, m);
+    }
+
+    public System.Threading.Tasks.Task AddDetaliuComandaAsync(CarService.DetaliuComanda d, CarService.Comanda c, CarService.Material ma, CarService.Operatie o, CarService.Mecanic m)
+    {
+        return base.Channel.AddDetaliuComandaAsync(d, c, ma, o, m);
+    }
+
+    public void DeleteDetaliuComanda(CarService.DetaliuComanda detaliu)
+    {
+        base.Channel.DeleteDetaliuComanda(detaliu);
+    }
+
+    public System.Threading.Tasks.Task DeleteDetaliuComandaAsync(CarService.DetaliuComanda detaliu)
+    {
+        return base.Channel.DeleteDetaliuComandaAsync(detaliu);
+    }
+
+    public CarService.DetaliuComanda GetDetaliuComandaById(int id)
+    {
+        return base.Channel.GetDetaliuComandaById(id);
+    }
+
+    public System.Threading.Tasks.Task<CarService.DetaliuComanda> GetDetaliuComandaByIdAsync(int id)
+    {
+        return base.Channel.GetDetaliuComandaByIdAsync(id);
+    }
+
+    public CarService.DetaliuComanda[] ListDetaliuComandaByComanda(CarService.Comanda comanda)
+    {
+        return base.Channel.ListDetaliuComandaByComanda(comanda);
+    }
+
+    public System.Threading.Tasks.Task<CarService.DetaliuComanda[]> ListDetaliuComandaByComandaAsync(CarService.Comanda comanda)
+    {
+        return base.Channel.ListDetaliuComandaByComandaAsync(comanda);
+    }
+
+    public void UpdateDetaliuComanda(CarService.DetaliuComanda detaliu)
+    {
+        base.Channel.UpdateDetaliuComanda(detaliu);
+    }
+
+    public System.Threading.Tasks.Task UpdateDetaliuComandaAsync(CarService.DetaliuComanda detaliu)
+    {
+        return base.Channel.UpdateDetaliuComandaAsync(detaliu);
     }
 }

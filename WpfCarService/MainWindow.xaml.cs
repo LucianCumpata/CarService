@@ -23,9 +23,15 @@ namespace WpfCarService
     /// </summary>
     public partial class MainWindow : Window
     {
+        IEnumerable<Mecanic> Mecanics { get; set; }
         public MainWindow()
         {
+            CarServiceClient carServiceMecanic = new CarServiceClient();
+            
             InitializeComponent();
+            Mecanics = carServiceMecanic.ListAllMecanics();
+            MecanicsList.ItemsSource = Mecanics;
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -62,6 +68,61 @@ namespace WpfCarService
             finally
             {
                 this.Close();
+            }
+        }
+
+        
+
+        private void BtnViewAllMecanics_Click(object sender, RoutedEventArgs e)
+        {
+            CarServiceClient carServiceMecanic = new CarServiceClient();
+
+            Mecanics = carServiceMecanic.ListAllMecanics();
+            MecanicsList.Items.Clear();
+
+            MecanicsList.ItemsSource = Mecanics;
+         
+            //DisposeModelCarServiceContext();
+        }
+
+        private void MecanicsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnAddNewMecanic_Click(object sender, RoutedEventArgs e)
+        {
+            CarServiceClient carSeMecanic = new CarServiceClient();
+            Mecanic m = new Mecanic();
+
+            string fName = TxtBxNumeMecanic.Text.ToString();
+            string lName = TxtBxPrenumeMecanic.Text.ToString();
+
+            m.Nume = fName;
+            m.Prenume = lName;
+
+            if (fName.Length > 2 && lName.Length > 2)
+            {
+                try
+                {
+                    carSeMecanic.AddMecanic(m);
+                    MessageBox.Show("Mecanicul " + m.Nume + " " + m.Prenume + " a fost adaugat cu succes!");
+
+                    //ShowMecanicsList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Error");
+                }
+                finally
+                {
+                    TxtBxNumeMecanic.Clear();
+                    TxtBxPrenumeMecanic.Clear();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Completati Numele si prenumele mecanicului!");
             }
         }
     }

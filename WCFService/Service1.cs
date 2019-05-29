@@ -10,9 +10,11 @@ namespace WCFService
 {
     public class CarService : ICarService
     {
+
         bool InterfaceClients.AddClient(Client client)
         {
-            return client.AddClient();
+            CarServiceAPI.AddClient(client);
+            return true;
         }
     }
 }

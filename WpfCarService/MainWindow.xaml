@@ -5,21 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCarService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="552" Width="873">
     <Grid RenderTransformOrigin="0.461,0.353">
-        <TabControl HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+        <TabControl HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" VerticalAlignment="Top" Width="850">
             <TabItem Header="Clients">
-                <Grid Background="#FFE5E5E5">
-                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="256,327,0,0" VerticalAlignment="Top" Width="112"/>
-                    <Button x:Name="Add_client" Content="Add client" HorizontalAlignment="Left" Margin="510,228,0,-137" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.4,2.5" Click="Button_Click"/>
-                    <TextBox x:Name="Nume" HorizontalAlignment="Left" Height="23" Margin="390,35,0,0" TextWrapping="Wrap" Text="Nume" VerticalAlignment="Top" Width="120" />
-                    <TextBox x:Name="Prenume" HorizontalAlignment="Left" Height="23" Margin="390,63,0,0" TextWrapping="Wrap" Text="Prenume" VerticalAlignment="Top" Width="120" />
-                    <TextBox x:Name="Localitate" HorizontalAlignment="Left" Height="23" Margin="390,91,0,-3" TextWrapping="Wrap" Text="Localitate" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="Email" HorizontalAlignment="Left" Height="23" Margin="390,119,0,-31" TextWrapping="Wrap" Text="email" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="Phone" HorizontalAlignment="Left" Height="23" Margin="390,147,0,-59" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="Adress" HorizontalAlignment="Left" Height="23" Margin="390,175,0,-87" TextWrapping="Wrap" Text="Adresa" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="County" HorizontalAlignment="Left" Height="23" Margin="390,203,0,-115" TextWrapping="Wrap" Text="Judet" VerticalAlignment="Top" Width="120"/>
-                    <DataGrid x:Name="ClientList" ItemsSource="{Binding ''}"     HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="350"/>
+                <Grid Background="#FFE5E5E5" Margin="-1,1,1,-1">
+                    <DataGrid x:Name="ClientList" ItemsSource="{Binding Clients}"   HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="520" SelectionChanged="ClientList_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Nume}" ClipboardContentBinding="{x:Null}" Header="Nume"/>
+                            <DataGridTextColumn Binding="{Binding Prenume}" ClipboardContentBinding="{x:Null}" Header="Prenume"/>
+                            <DataGridTextColumn Binding="{Binding Telefon}" ClipboardContentBinding="{x:Null}" Header="Telefon"/>
+                            <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Header="Email"/>
+                            <DataGridTextColumn Binding="{Binding Adresa}" ClipboardContentBinding="{x:Null}" Header="Adresa"/>
+                            <DataGridTextColumn Binding="{Binding Localitate}" ClipboardContentBinding="{x:Null}" Header="Localitate"/>
+                            <DataGridTextColumn Binding="{Binding Judet}" ClipboardContentBinding="{x:Null}" Header="Judet"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="427,209,0,0" VerticalAlignment="Top" Width="111" Click="BtnViewAllClients_Click"/>
+                    <TextBox x:Name="TxtBoxSearch"   HorizontalAlignment="Left" Height="23" Margin="18,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                    <Button x:Name="BtnSearchClient"    Content="Search" HorizontalAlignment="Left" Margin="207,210,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearchClient_Click"/>
+                    <Button x:Name="BtnNewClient" Content="New client" HorizontalAlignment="Left" Margin="347,209,0,0" VerticalAlignment="Top" Width="75" Click="BtnNewClient_Click"/>
+                    <DataGrid x:Name="CarList" HorizontalAlignment="Left" Height="189" Margin="558,10,0,0" VerticalAlignment="Top" Width="276"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Mecanics">
@@ -33,6 +40,7 @@
                     <TextBox x:Name="TxtBxPrenumeMecanic" HorizontalAlignment="Left" Height="23" Margin="631,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
                 </Grid>
             </TabItem>
+
         </TabControl>
 
     </Grid>

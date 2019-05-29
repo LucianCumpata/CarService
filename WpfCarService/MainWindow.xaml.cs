@@ -23,52 +23,33 @@ namespace WpfCarService
     /// </summary>
     public partial class MainWindow : Window
     {
+        IEnumerable<Client> Clients { get; set; }
         IEnumerable<Mecanic> Mecanics { get; set; }
+
+        string Nume { get; set; }
+        string Prenume { get; set; }
+        string Telefon { get; set; }
+        string Email { get; set; }
+        string Adresa { get; set; }
+        string Localitate { get; set; }
+        string Judet { get; set; }
+
+
         public MainWindow()
         {
-            CarServiceClient carServiceMecanic = new CarServiceClient();
+            CarServiceClient csc = new CarServiceClient();
             
             InitializeComponent();
-            Mecanics = carServiceMecanic.ListAllMecanics();
+            Mecanics = csc.ListAllMecanics();
             MecanicsList.ItemsSource = Mecanics;
+
+            
             
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CarServiceClient carServiceClient = new CarServiceClient();
-            Client client = new Client();
-
-            string fName = Nume.Text.ToString();
-            string lName = Prenume.Text.ToString();
-            string addrs = Adress.Text.ToString();
-            string loc = Localitate.Text.ToString();
-            string county = County.Text.ToString();
-            string phoneNr = Phone.Text.ToString();
-            string email = Email.Text.ToString();
-
-            client.Nume = fName;
-            client.Prenume = lName;
-            client.Adresa = addrs;
-            client.Localitate = loc;
-            client.Judet = county;
-            client.Telefon = phoneNr;
-            client.Email = email;
-
-            try
-            {
-                carServiceClient.AddClient(client);
-                MessageBox.Show("Clientul " + client.Nume + " " + client.Prenume + " a fost adaugat cu succes!");
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString(), "Error");
-            }
-            finally
-            {
-                this.Close();
-            }
+            
         }
 
         
@@ -80,6 +61,7 @@ namespace WpfCarService
             Mecanics = carServiceMecanic.ListAllMecanics();
             MecanicsList.Items.Clear();
 
+            
             MecanicsList.ItemsSource = Mecanics;
          
             //DisposeModelCarServiceContext();
@@ -89,6 +71,8 @@ namespace WpfCarService
         {
 
         }
+
+
 
         private void BtnAddNewMecanic_Click(object sender, RoutedEventArgs e)
         {
@@ -124,6 +108,44 @@ namespace WpfCarService
             {
                 MessageBox.Show("Completati Numele si prenumele mecanicului!");
             }
+        }
+
+        private void ClientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void BtnViewAllClients_Click(object sender, RoutedEventArgs e)
+        {
+            CarServiceClient csc = new CarServiceClient();
+
+            Clients = csc.ListAllClients();
+            foreach(var client in Clients)
+            {
+                Nume = client.Nume;
+                Prenume = client.Prenume;
+                Telefon = client.Telefon;
+                Email = client.Email;
+                Adresa = client.Adresa;
+                Localitate = client.Localitate;
+                Judet = client.Judet;
+            }
+
+            ClientList.ItemsSource = Clients.ToList();
+        }
+
+        private void BtnSearchClient_Click(object sender, RoutedEventArgs e)
+        {
+            string searchName = TxtBoxSearch.Text.ToString();
+            CarServiceClient csc = new CarServiceClient();
+            Clients = csc.ListClientsByName(searchName);
+            ClientList.ItemsSource = Clients;
+        }
+
+        private void BtnNewClient_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewClient addNewClient = new AddNewClient();
+            addNewClient.ShowDialog();
         }
     }
 }

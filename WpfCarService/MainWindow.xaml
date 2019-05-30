@@ -10,8 +10,10 @@
         <TabControl HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" VerticalAlignment="Top" Width="850">
             <TabItem Header="Clients">
                 <Grid Background="#FFE5E5E5" Margin="-1,1,1,-1">
-                    <DataGrid x:Name="ClientList" ItemsSource="{Binding Clients}"   HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="520" SelectionChanged="ClientList_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid x:Name="ClientList" ItemsSource="{Binding Clients}"   HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="569" SelectionChanged="ClientList_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
+
+                            <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id" CanUserReorder="False"/>
                             <DataGridTextColumn Binding="{Binding Nume}" ClipboardContentBinding="{x:Null}" Header="Nume"/>
                             <DataGridTextColumn Binding="{Binding Prenume}" ClipboardContentBinding="{x:Null}" Header="Prenume"/>
                             <DataGridTextColumn Binding="{Binding Telefon}" ClipboardContentBinding="{x:Null}" Header="Telefon"/>
@@ -22,11 +24,38 @@
 
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="427,209,0,0" VerticalAlignment="Top" Width="111" Click="BtnViewAllClients_Click"/>
+                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="487,209,0,0" VerticalAlignment="Top" Width="100" Click="BtnViewAllClients_Click"/>
                     <TextBox x:Name="TxtBoxSearch"   HorizontalAlignment="Left" Height="23" Margin="18,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
-                    <Button x:Name="BtnSearchClient"    Content="Search" HorizontalAlignment="Left" Margin="207,210,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearchClient_Click"/>
-                    <Button x:Name="BtnNewClient" Content="New client" HorizontalAlignment="Left" Margin="347,209,0,0" VerticalAlignment="Top" Width="75" Click="BtnNewClient_Click"/>
-                    <DataGrid x:Name="CarList" HorizontalAlignment="Left" Height="189" Margin="558,10,0,0" VerticalAlignment="Top" Width="276"/>
+                    <Button x:Name="BtnSearchClient"    Content="Search" HorizontalAlignment="Left" Margin="178,210,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearchClient_Click"/>
+                    <Button x:Name="BtnNewClient" Content="New client" HorizontalAlignment="Left" Margin="414,209,0,0" VerticalAlignment="Top" Width="68" Click="BtnNewClient_Click"/>
+                    <DataGrid x:Name="CarList" HorizontalAlignment="Left" Height="189" Margin="605,10,0,0" VerticalAlignment="Top" Width="229" AutoGenerateColumns="False" SelectionChanged="CarList_SelectionChanged">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id"/>
+                            <DataGridTextColumn Binding="{Binding NumarAuto}" ClipboardContentBinding="{x:Null}" Header="Numar Auto"/>
+                            <DataGridTextColumn Binding="{Binding SerieSasiu}" ClipboardContentBinding="{x:Null}" Header="Serie Sasiu"/>
+                            <!--
+                            <DataGridTextColumn Binding="{Binding CodSasiu}" ClipboardContentBinding="{x:Null}" Header="Cod Sasiu"/>
+                            <DataGridTextColumn Binding="{Binding DenumireSasiu}" ClipboardContentBinding="{x:Null}" Header="Denumire Sasiu"/>
+                            -->
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="BtnAddCar" Content="Add car" HorizontalAlignment="Left" Margin="605,209,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddCar_Click"/>
+                    <Button x:Name="BtnDeleteCar" Content="Delete car" HorizontalAlignment="Left" Margin="685,209,0,0" VerticalAlignment="Top" Width="75"/>
+                    <DataGrid x:Name="OrdersList" HorizontalAlignment="Left" Height="143" Margin="18,268,0,0" VerticalAlignment="Top" Width="816" SelectionChanged="OrdersList_SelectionChanged" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id"/>
+                            <DataGridTextColumn Binding="{Binding StareComanda}" ClipboardContentBinding="{x:Null}" Header="Stare comanda"/>
+                            <DataGridTextColumn Binding="{Binding DataProgramare}" ClipboardContentBinding="{x:Null}" Header="Data incepere"/>
+                            <DataGridTextColumn Binding="{Binding DataFinalizare}" ClipboardContentBinding="{x:Null}" Header="Data terminare"/>
+                            <DataGridTextColumn Binding="{Binding DataSystem}" ClipboardContentBinding="{x:Null}" Header="Data sistem"/>
+                            <DataGridTextColumn Binding="{Binding KmBord}" ClipboardContentBinding="{x:Null}" Header="Km bord"/>
+                            <DataGridTextColumn Binding="{Binding Descriere}" ClipboardContentBinding="{x:Null}" Header="Descriere"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="BtnNewOrder" Content="New order" HorizontalAlignment="Left" Margin="759,243,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="BtnOrderDetails" Content="Order Details" HorizontalAlignment="Left" Margin="18,416,0,0" VerticalAlignment="Top" Width="108"/>
+                    <Button x:Name="BtnOrderModify" Content="Modify Order" HorizontalAlignment="Left" Margin="131,416,0,0" VerticalAlignment="Top" Width="122"/>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Mecanics">

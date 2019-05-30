@@ -25,7 +25,10 @@ namespace WpfCarService
     {
         IEnumerable<Client> Clients { get; set; }
         IEnumerable<Mecanic> Mecanics { get; set; }
+        IEnumerable<Auto> Autos { get; set; }
+        IEnumerable<Comanda> Orders { get; set; }
 
+        public string IdClient { get; set; }
         string Nume { get; set; }
         string Prenume { get; set; }
         string Telefon { get; set; }
@@ -34,6 +37,11 @@ namespace WpfCarService
         string Localitate { get; set; }
         string Judet { get; set; }
 
+        string IdAuto { get; set; }
+        string NumarAuto { get; set; }
+        string SerieSasiu { get; set; }
+        string CodSasiu { get; set; }
+        string DenumireSasiu { get; set; }
 
         public MainWindow()
         {
@@ -112,26 +120,33 @@ namespace WpfCarService
 
         private void ClientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //https://stackoverflow.com/questions/2148978/wpf-toolkit-datagrid-selectionchanged-getting-cell-value
 
+            CarServiceClient csc = new CarServiceClient();
+            DataGrid ClientList = sender as DataGrid;
+            DataGridRow row = (DataGridRow)ClientList.ItemContainerGenerator.ContainerFromIndex(ClientList.SelectedIndex);
+            DataGridCell RowColumn = ClientList.Columns[0].GetCellContent(row).Parent as DataGridCell;
+            string CellValue = ((TextBlock)RowColumn.Content).Text;
+
+            //MessageBox.Show(CellValue);
+
+            var client = csc.GetClientById(int.Parse(CellValue));
+
+            Autos = csc.ListAutosByClient(client);
+
+        
+            GUI_WPF.SetSelectedClientId(client.Id);
+            CarList.ItemsSource = Autos;
         }
+
 
         private void BtnViewAllClients_Click(object sender, RoutedEventArgs e)
         {
             CarServiceClient csc = new CarServiceClient();
 
             Clients = csc.ListAllClients();
-            foreach(var client in Clients)
-            {
-                Nume = client.Nume;
-                Prenume = client.Prenume;
-                Telefon = client.Telefon;
-                Email = client.Email;
-                Adresa = client.Adresa;
-                Localitate = client.Localitate;
-                Judet = client.Judet;
-            }
-
-            ClientList.ItemsSource = Clients.ToList();
+  
+            ClientList.ItemsSource = Clients;
         }
 
         private void BtnSearchClient_Click(object sender, RoutedEventArgs e)
@@ -146,6 +161,32 @@ namespace WpfCarService
         {
             AddNewClient addNewClient = new AddNewClient();
             addNewClient.ShowDialog();
+        }
+
+        private void BtnAddCar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void OrdersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void CarList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            CarServiceClient csc = new CarServiceClient();
+            DataGrid CarsList = sender as DataGrid;
+            DataGridRow row = (DataGridRow)CarsList.ItemContainerGenerator.ContainerFromIndex(CarsList.SelectedIndex);
+            DataGridCell RowColumn = CarsList.Columns[0].GetCellContent(row).Parent as DataGridCell;
+            string CellValue = ((TextBlock)RowColumn.Content).Text;
+
+            var auto = csc.GetAutoById(int.Parse(CellValue));
+
+            Orders = csc.ListOrdersByAuto(auto);
+
+            GUI_WPF.SetSelectedAutoId(auto.Id);
+            OrdersList.ItemsSource = Orders;
         }
     }
 }

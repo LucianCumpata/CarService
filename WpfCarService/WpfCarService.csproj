@@ -68,6 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="GUI_WPF.cs" />
     <Compile Include="proxy.cs" />
     <Page Include="AddNewClient.xaml">
       <SubType>Designer</SubType>

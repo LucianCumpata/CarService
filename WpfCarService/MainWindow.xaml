@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCarService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="552" Width="873">
+        Title="MainWindow" Height="552" Width="873" ResizeMode="CanMinimize">
     <Grid RenderTransformOrigin="0.461,0.353">
         <TabControl HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" VerticalAlignment="Top" Width="850">
             <TabItem Header="Clients">
                 <Grid Background="#FFE5E5E5" Margin="-1,1,1,-1">
-                    <DataGrid x:Name="ClientList" ItemsSource="{Binding Clients}"   HorizontalAlignment="Left" Height="189" Margin="18,10,0,0" VerticalAlignment="Top" Width="569" SelectionChanged="ClientList_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+                    <DataGrid x:Name="ClientList" ItemsSource="{Binding Clients}"   HorizontalAlignment="Left" Height="205" Margin="18,10,0,0" VerticalAlignment="Top" Width="569" SelectionChanged="ClientList_SelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
 
                             <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id" CanUserReorder="False"/>
@@ -24,11 +24,11 @@
 
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="487,209,0,0" VerticalAlignment="Top" Width="100" Click="BtnViewAllClients_Click"/>
-                    <TextBox x:Name="TxtBoxSearch"   HorizontalAlignment="Left" Height="23" Margin="18,210,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
-                    <Button x:Name="BtnSearchClient"    Content="Search" HorizontalAlignment="Left" Margin="178,210,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearchClient_Click"/>
-                    <Button x:Name="BtnNewClient" Content="New client" HorizontalAlignment="Left" Margin="414,209,0,0" VerticalAlignment="Top" Width="68" Click="BtnNewClient_Click"/>
-                    <DataGrid x:Name="CarList" HorizontalAlignment="Left" Height="189" Margin="605,10,0,0" VerticalAlignment="Top" Width="229" AutoGenerateColumns="False" SelectionChanged="CarList_SelectionChanged">
+                    <Button x:Name="BtnViewAllClients" Content="View all clients" HorizontalAlignment="Left" Margin="487,220,0,0" VerticalAlignment="Top" Width="100" Click="BtnViewAllClients_Click"/>
+                    <TextBox x:Name="TxtBoxSearch"   HorizontalAlignment="Left" Height="23" Margin="18,220,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                    <Button x:Name="BtnSearchClient"    Content="Search" HorizontalAlignment="Left" Margin="178,220,0,0" VerticalAlignment="Top" Width="75" Click="BtnSearchClient_Click"/>
+                    <Button x:Name="BtnNewClient" Content="New client" HorizontalAlignment="Left" Margin="288,220,0,0" VerticalAlignment="Top" Width="68" Click="BtnNewClient_Click"/>
+                    <DataGrid x:Name="CarList" HorizontalAlignment="Left" Height="205" Margin="605,10,0,0" VerticalAlignment="Top" Width="229" AutoGenerateColumns="False" SelectionChanged="CarList_SelectionChanged" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id"/>
                             <DataGridTextColumn Binding="{Binding NumarAuto}" ClipboardContentBinding="{x:Null}" Header="Numar Auto"/>
@@ -39,9 +39,9 @@
                             -->
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="BtnAddCar" Content="Add car" HorizontalAlignment="Left" Margin="605,209,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddCar_Click"/>
-                    <Button x:Name="BtnDeleteCar" Content="Delete car" HorizontalAlignment="Left" Margin="685,209,0,0" VerticalAlignment="Top" Width="75"/>
-                    <DataGrid x:Name="OrdersList" HorizontalAlignment="Left" Height="143" Margin="18,268,0,0" VerticalAlignment="Top" Width="816" SelectionChanged="OrdersList_SelectionChanged" AutoGenerateColumns="False">
+                    <Button x:Name="BtnAddCar" Content="Add car" HorizontalAlignment="Left" Margin="605,220,0,0" VerticalAlignment="Top" Width="75" Click="BtnAddCar_Click"/>
+                    <Button x:Name="BtnDeleteCar" Content="Delete car" HorizontalAlignment="Left" Margin="685,220,0,0" VerticalAlignment="Top" Width="75"/>
+                    <DataGrid x:Name="OrdersList" HorizontalAlignment="Left" Height="143" Margin="18,285,0,0" VerticalAlignment="Top" Width="816" SelectionChanged="OrdersList_SelectionChanged" AutoGenerateColumns="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id"/>
                             <DataGridTextColumn Binding="{Binding StareComanda}" ClipboardContentBinding="{x:Null}" Header="Stare comanda"/>
@@ -52,21 +52,38 @@
                             <DataGridTextColumn Binding="{Binding Descriere}" ClipboardContentBinding="{x:Null}" Header="Descriere"/>
                         </DataGrid.Columns>
                     </DataGrid>
-                    <Button x:Name="BtnNewOrder" Content="New order" HorizontalAlignment="Left" Margin="759,243,0,0" VerticalAlignment="Top" Width="75"/>
-                    <Button x:Name="BtnOrderDetails" Content="Order Details" HorizontalAlignment="Left" Margin="18,416,0,0" VerticalAlignment="Top" Width="108"/>
-                    <Button x:Name="BtnOrderModify" Content="Modify Order" HorizontalAlignment="Left" Margin="131,416,0,0" VerticalAlignment="Top" Width="122"/>
+                    <Button x:Name="BtnNewOrder" Content="New order" HorizontalAlignment="Left" Margin="759,260,0,0" VerticalAlignment="Top" Width="75"/>
+                    <Button x:Name="BtnOrderDetails" Content="Order Details" HorizontalAlignment="Left" Margin="18,433,0,0" VerticalAlignment="Top" Width="108"/>
+                    <Button x:Name="BtnOrderModify" Content="Modify Order" HorizontalAlignment="Left" Margin="131,433,0,0" VerticalAlignment="Top" Width="122"/>
+                    <Button x:Name="BtnCarModify" Content="Modify" HorizontalAlignment="Left" Margin="765,220,0,0" VerticalAlignment="Top" Width="69"/>
+                    <Button x:Name="BtnClientDelete" Content="Delete" HorizontalAlignment="Left" Margin="424,220,0,0" VerticalAlignment="Top" Width="58"/>
+                    <Button x:Name="BtnClientModify" Content="Modify" HorizontalAlignment="Left" Margin="361,220,0,0" VerticalAlignment="Top" Width="58"/>
+                    <Button x:Name="BtnOrderDelete" Content="Delete Order" HorizontalAlignment="Left" Margin="258,433,0,0" VerticalAlignment="Top" Width="91"/>
 
                 </Grid>
             </TabItem>
             <TabItem Header="Mecanics">
                 <Grid Background="#FFE5E5E5" Margin="0,1,0,-1">
-                    <Button x:Name="BtnViewAllMecanics"    Content="View all mecanics" HorizontalAlignment="Left" Margin="109,242,0,0" VerticalAlignment="Top" Width="122" Click="BtnViewAllMecanics_Click"/>
-                    <DataGrid x:Name="MecanicsList" ItemsSource="{Binding ''}"  HorizontalAlignment="Left" Height="100" Margin="67,16,0,0" VerticalAlignment="Top" Width="408" SelectionChanged="MecanicsList_SelectionChanged"/>
-                    <Button x:Name="BtnAddNewMecanic" Content="Add new mecanic" HorizontalAlignment="Left" Margin="631,324,0,0" VerticalAlignment="Top" Width="120" Click="BtnAddNewMecanic_Click"/>
-                    <Label Content="Nume" HorizontalAlignment="Left" Margin="569,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,0.769"/>
-                    <Label Content="Prenume" HorizontalAlignment="Left" Margin="569,296,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="TxtBxNumeMecanic" HorizontalAlignment="Left" Height="23" Margin="631,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="TxtBxPrenumeMecanic" HorizontalAlignment="Left" Height="23" Margin="631,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="21*"/>
+                        <ColumnDefinition Width="823*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="BtnViewAllMecanics"    Content="View all mecanics" HorizontalAlignment="Left" Margin="88,242,0,0" VerticalAlignment="Top" Width="122" Click="BtnViewAllMecanics_Click" Grid.Column="1"/>
+                    <DataGrid x:Name="MecanicsList" ItemsSource="{Binding ''}"  HorizontalAlignment="Left" Height="100" Margin="46,16,0,0" VerticalAlignment="Top" Width="408" SelectionChanged="MecanicsList_SelectionChanged" Grid.Column="1" AutoGenerateColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Binding="{Binding Id}" ClipboardContentBinding="{x:Null}" Header="Id" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Nume}" ClipboardContentBinding="{x:Null}" Header="Nume" IsReadOnly="True"/>
+                            <DataGridTextColumn Binding="{Binding Prenume}" ClipboardContentBinding="{x:Null}" Header="Prenume" IsReadOnly="True"/>
+
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button x:Name="BtnAddNewMecanic" Content="Add new mecanic" HorizontalAlignment="Left" Margin="610,324,0,0" VerticalAlignment="Top" Width="120" Click="BtnAddNewMecanic_Click" Grid.Column="1"/>
+                    <Label Content="Nume" HorizontalAlignment="Left" Margin="548,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.452,0.769" Grid.Column="1"/>
+                    <Label Content="Prenume" HorizontalAlignment="Left" Margin="548,296,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <TextBox x:Name="TxtBxNumeMecanic" HorizontalAlignment="Left" Height="23" Margin="610,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <TextBox x:Name="TxtBxPrenumeMecanic" HorizontalAlignment="Left" Height="23" Margin="610,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Column="1"/>
+                    <Button  x:Name="BtnMecanicModify"   Content="Modify" HorizontalAlignment="Left" Margin="635,349,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+                    <Button x:Name="BtnMecanicDelete"    Content="Delete Mecanic" HorizontalAlignment="Left" Margin="358,121,0,0" VerticalAlignment="Top" Width="96" Grid.Column="1"/>
                 </Grid>
             </TabItem>
 
